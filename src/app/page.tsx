@@ -12,7 +12,7 @@ export default function Home() {
                 priority
             />
 
-            <div className="relative flex flex-col items-center pt-16">
+            <div className="relative flex flex-col items-center text-white pt-16">
                 <p>Website is currently under development.</p>
 
                 <div className="bg-red-500 mx-8 mt-4 p-2 flex rounded-lg items-center justify-center">
