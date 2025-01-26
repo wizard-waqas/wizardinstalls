@@ -15,7 +15,7 @@ export default function DashCamPackages() {
 
     return (
         <div className={"flex flex-col items-center"}>
-            <div className="flex justify-center mb-8 w-full">
+            <div className="flex justify-center mb-8 w-11/12 rounded-lg overflow-hidden">
                 <SelectServiceButton
                     selectedService={selectedService}
                     handleServiceChange={handleServiceChange}
@@ -38,7 +38,7 @@ export default function DashCamPackages() {
                 />
             </div>
 
-            <div className={"flex mt-4 mx-4 space-x-4"}>
+            <div className={"flex mt-4 mx-4 space-x-4 w-11/12"}>
                 <BuyOnAmazonButton selectedService={selectedService}/>
                 {/*<GetItInstalledButton/>*/}
             {/*    we can make the amazon button white with just the logo and the getitinstalled button black
@@ -63,10 +63,10 @@ const SelectServiceButton = ({selectedService, handleServiceChange, service, pri
     return (
         <button
             onClick={() => handleServiceChange(service)}
-            className={`w-full mx-4 flex justify-center items-center space-x-2 px-2 py-2 rounded-lg transition-all ${
+            className={`w-full flex justify-center items-center space-x-2 px-2 py-2 transition-all ${
                 selectedService === service
                     ? "bg-red-500 text-white"
-                    : "bg-transparent text-white border border-gray-500"
+                    : " text-white bg-grey-400"
             }`}
         >
             <span>{capitalize(service)}</span>
@@ -99,13 +99,13 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
             href={getAmazonLink()}
             target="_blank"
             rel="noreferrer"
-            className="flex justify-center items-center space-x-4 px-8 py-2 bg-black text-white rounded-full"
+            className="w-full flex justify-center items-center space-x-4 px-4 py-2 bg-black text-white rounded-lg"
         >
             <div className={"flex flex-col  items-center space-y-2"}>
-                <span>ORDER NOW ON</span>
-                <img className={"w-16  h-6"} src={"/installation-services/whiteamazonlogo.png"}/>
+                <span>Order now on</span>
+                <img alt={"amazon logo"} className={"w-16  h-6"} src={"/installation-services/whiteamazonlogo.png"}/>
             </div>
-            <IoIosArrowForward size={40} className={"text-orange-300"}/>
+            {/*<IoIosArrowForward size={40} className={"text-orange-300"}/>*/}
 
         </a>
     )
@@ -113,8 +113,8 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
 
 const GetItInstalledButton = () => {
     return (
-        <button className={"bg-white text-black px-4 py-2 rounded-full"}>
-            HAVE US INSTALL
+        <button className={"w-full bg-orange-400 text-white font-bold  px-4 py-2 rounded-lg"}>
+            Request Install
         </button>
     )
 }
