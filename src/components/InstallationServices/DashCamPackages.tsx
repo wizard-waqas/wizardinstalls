@@ -7,7 +7,7 @@ export default function DashCamPackages() {
     const [selectedService, setSelectedService] = useState("front");
 
     const imageSrc =
-        selectedService === "front" ? "/front-dashcam.jpg" : "/front-and-rear-dashcam.png";
+        selectedService === "front" ? "/installation-services/front-dashcam.jpg" : "/installation-services/front-and-rear-dashcam.png";
 
     const handleServiceChange = (service: string) => {
         setSelectedService(service);

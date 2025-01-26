@@ -12,21 +12,21 @@ export default function Home() {
                     src="/lambo.jpg"
                     alt="Car Background"
                     fill
-                    className="object-cover object-[-36px_center] -z-10 "
+                    className="object-cover -z-10 "
                     priority
                 />
 
                 <div className="relative flex flex-col items-center text-white pt-16">
-                    <div className="bg-red-500 mx-8 mt-4 w-5/6 py-2 flex rounded-lg items-center justify-center">
+                    <div className="bg-red-500 mx-8 w-5/6 py-2 flex rounded-lg items-center justify-center">
                         <h1 className="text-white font-beiruti text-center text-xl">
                             WIZARD DASHCAM INSTALLS
                         </h1>
                     </div>
-                    <h2 className="text-center font-faculty-glyphic font-bold text-gray-300 text-4xl mt-16">
+                    <h2 className="text-center font-faculty-glyphic font-bold text-gray-300 text-4xl mt-12">
                         For when they dash,<br/> you've got the cam.
                     </h2>
 
-                    <a className={"flex border-2 px-4 py-4 rounded-xl mt-16 text-xl"} href="#installation-services">
+                    <a className={"flex border-2 px-4 py-4 rounded-xl mt-12 text-xl"} href="#installation-services">
                         Installations starting at $70
                     </a>
 
