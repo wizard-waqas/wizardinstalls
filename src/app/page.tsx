@@ -26,11 +26,11 @@ export default function Home() {
                         For when they dash,<br/> you've got the cam.
                     </h2>
 
-                    <a className={"flex border-2 px-4 py-4 rounded-xl mt-12 text-xl"} href="#installation-services">
-                        Installations starting at $70
+                    <a className={"flex flex-col items-center"} href="#installation-services">
+                        <span className={" border-2 px-4 py-4 rounded-xl mt-12 text-xl"}>Installations starting at $70</span>
+                        <IoIosArrowDown className={"mt-2 animate-bounceFade"} size={32}/>
                     </a>
 
-                    <IoIosArrowDown className={"mt-2 animate-bounceFade"} size={32}/>
                 </div>
             </div>
 
