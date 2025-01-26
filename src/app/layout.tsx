@@ -29,7 +29,7 @@ export default function RootLayout({
             <meta name="theme-color" content="#000000"/>
 
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={"true"}/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={""}/>
             <link
                 href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Beiruti:wght@200..900&family=Faculty+Glyphic&display=swap"
                 rel="stylesheet"/>
