@@ -4,7 +4,7 @@ import {getAnalytics} from "firebase/analytics";
 import {getAuth, GoogleAuthProvider} from "firebase/auth";
 
 // @ts-ignore
-const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
+const firebaseConfig = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG);
 
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);

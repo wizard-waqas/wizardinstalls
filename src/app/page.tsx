@@ -12,22 +12,12 @@ export default function Home() {
   const pathname = usePathname(); // Get current path
 
   useEffect(() => {
-    // Track initial page view
     if (analytics) {
       logEvent(analytics, "page_view", {
         page_path: window.location.pathname,
       });
     }
-  }, []); // Runs once on mount
-
-  useEffect(() => {
-    // Track subsequent page views on route changes
-    if (analytics) {
-      logEvent(analytics, "page_view", {
-        page_path: pathname,
-      });
-    }
-  }, [pathname]); // Runs when pathname changes
+  }, []);
 
   return (
     <div className="relative min-h-screen w-full">
