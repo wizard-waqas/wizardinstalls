@@ -15,7 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: "Wizard Dashcam Installs",
-    description: "Offering mobile dashcam installation services"
+    description: "Offering mobile dashcam installation services",
+    icons: {
+      icon: "/favicon.ico",
+      apple: "/apple-icon.png",
+    },
 };
 
 export default function RootLayout({
