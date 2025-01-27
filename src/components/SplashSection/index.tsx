@@ -1,8 +1,31 @@
-import React from "react"
+import React, {useEffect} from "react"
 import Image from "next/image";
 import {IoIosArrowDown} from "react-icons/io";
+import {useRouter} from "next/router";
+import {analytics} from "@/firebase";
+import {logEvent} from "@firebase/analytics";
 
 export default function SplashSection() {
+    const router = useRouter();
+
+    useEffect(() => {
+        const handleRouteChange = (url: string) => {
+            if (analytics) {
+                logEvent(analytics, "page_view", {
+                    page_path: url,
+                });
+            }
+        };
+
+        // Track page views on route change
+        router.events.on("routeChangeComplete", handleRouteChange);
+
+        // Cleanup
+        return () => {
+            router.events.off("routeChangeComplete", handleRouteChange);
+        };
+    }, [router.events]);
+
     return (
 
         <div className="relative h-screen w-full">
