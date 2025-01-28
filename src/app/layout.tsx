@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
+import {Toaster} from "react-hot-toast";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     title: "Wizard Dashcam Installs",
     description: "Offering mobile dashcam installation services",
     icons: {
-      icon: "/favicon.ico",
-      apple: "/apple-icon.png",
+        icon: "/favicon.ico",
+        apple: "/apple-icon.png",
     },
 };
 
 export default function RootLayout({
-           children,
-       }: Readonly<{
+                                       children,
+                                   }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
@@ -43,6 +44,7 @@ export default function RootLayout({
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+        <Toaster/>
         {children}
         </body>
         </html>
