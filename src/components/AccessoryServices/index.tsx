@@ -4,9 +4,10 @@ import AccessoryOption from "@/components/AccessoryServices/AccessoryOption";
 export default function AccessoryServices() {
     return (
         <section id="accessory-services" className="pt-8 flex flex-col items-center">
-            <h3 className="text-center text-red-500 font-bold text-2xl mb-8">
+            <h3 className="text-center text-red-500 font-bold text-2xl">
                 ACCESSORY SERVICES
             </h3>
+            <h4 className={"mx-4 mt-4 mb-8 font-bold text-gray-200 text-center text-xl"}>Enhance your ride experience with our quality of life add-ons.</h4>
 
             {/*<AccessoryOption*/}
             {/*    imageSrc={"parked-recording.png"}*/}

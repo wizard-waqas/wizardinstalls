@@ -11,7 +11,7 @@ export default function InstallationServices() {
             <h3 className="text-center text-red-500 font-bold text-2xl">
                 INSTALLATION SERVICES
             </h3>
-            <h4 className={"text-center mt-4 font-bold text-xl"}>
+            <h4 className={"text-center mt-4 font-bold text-xl mx-4 text-gray-200"}>
                 Choose your coverage: Front camera or full front + rear dashcam setups
             </h4>
 
