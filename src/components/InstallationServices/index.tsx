@@ -9,7 +9,7 @@ export default function InstallationServices() {
     return (
         <section id="installation-services" className="py-8 bg-grey-800">
             <h3 className="text-center text-red-500 font-bold text-2xl">
-                INSTALLATION SERVICES
+                Dashcam Packages
             </h3>
             <h4 className={"text-center mt-4 font-bold text-xl mx-4 text-gray-200"}>
                 Choose your coverage: Front camera or full front + rear dashcam setups

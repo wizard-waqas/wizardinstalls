@@ -40,11 +40,6 @@ export default function DashCamPackages() {
 
             <div className={"flex mt-4 mx-4 space-x-4 w-11/12"}>
                 <BuyOnAmazonButton selectedService={selectedService}/>
-                {/*<GetItInstalledButton/>*/}
-            {/*    we can make the amazon button white with just the logo and the getitinstalled button black
-            we can also use a shopping cart icon for the amazon button
-            also put the word OR in between the two buttons
-            */}
             </div>
 
         </div>
