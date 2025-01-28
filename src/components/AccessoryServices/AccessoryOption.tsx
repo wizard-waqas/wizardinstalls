@@ -6,9 +6,10 @@ interface AccessoryOptionProps {
     imageSrc: string;
     title: string;
     description: string;
+    price: number;
 }
 
-export default function AccessoryOption({ imageSrc, title, description }: AccessoryOptionProps) {
+export default function AccessoryOption({imageSrc, title, description, price}: AccessoryOptionProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleImageClick = () => {
@@ -32,11 +33,13 @@ export default function AccessoryOption({ imageSrc, title, description }: Access
                     />
                 </div>
                 <div className="flex flex-col flex-grow">
-                    <h4 className="text-center text-red-500 font-bold text-md">{title}</h4>
-                    <p className="text-center text-white mt-2">{description}</p>
+                    <div className={"flex justify-between items-center"}>
+                        <h4 className="text-center text-red-500 font-bold text-md">{title}</h4>
+                        <strong className={"bg-white text-black px-2 py-1 rounded-md"}>${price}</strong>
+                    </div>
+                    <p className="text-left  text-white mt-2">{description}</p>
                 </div>
             </div>
-
 
 
             {/* Modal */}
