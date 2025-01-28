@@ -8,7 +8,10 @@ export default function YouShouldKnow() {
 
                 <ul className="space-y-4">
                     <li className={"bg-grey-400  p-4 mx-4 rounded-lg flex justify-center items-center"}>
-                        <span>To record while parked we will need to hardwire the dashcam to the battery <strong>+$100</strong></span>
+                        <span>
+                            For 24/7 recording - we will need to hardwire the dashcam to the battery&nbsp;
+                            <strong className={"p-1  rounded-md bg-white text-black"}>+$100</strong>
+                        </span>
                     </li>
                     <li className={"bg-grey-400 p-4 mx-4 rounded-lg flex justify-center items-center"}>
                         <span>Not sure what dashcam to get?<br/>We can source it for you.</span>

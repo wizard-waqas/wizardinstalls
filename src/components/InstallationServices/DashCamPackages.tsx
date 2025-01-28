@@ -14,7 +14,7 @@ export default function DashCamPackages() {
     };
 
     return (
-        <div className={"flex flex-col items-center"}>
+        <div className={"flex flex-col items-center mt-8"}>
             <div className="flex justify-center mb-8 w-11/12 rounded-lg overflow-hidden">
                 <SelectServiceButton
                     selectedService={selectedService}
