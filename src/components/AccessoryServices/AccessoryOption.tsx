@@ -22,8 +22,7 @@ export default function AccessoryOption({imageSrc, title, description, price}: A
 
     return (
         <div className="relative">
-            {/* Main Section */}
-            <div className="flex mx-4 items-center justify-between space-x-4 my-4">
+            <div className="flex mx-4 items-center justify-between space-x-2">
                 <div className="flex-shrink-0">
                     <img
                         src={`/accessory-services/${imageSrc}`}
@@ -34,10 +33,10 @@ export default function AccessoryOption({imageSrc, title, description, price}: A
                 </div>
                 <div className="flex flex-col flex-grow">
                     <div className={"flex justify-between items-center"}>
-                        <h4 className="text-center text-red-500 font-bold text-md">{title}</h4>
-                        <strong className={"bg-white text-black px-2 py-1 rounded-md"}>${price}</strong>
+                        <h4 className="text-center text-red-400 font-bold text-md">{title}</h4>
+                        <strong className={"bg-white text-black px-2 rounded-md"}>${price}</strong>
                     </div>
-                    <p className="text-left  text-white mt-2">{description}</p>
+                    <p className="text-left pt-2 text-white">{description}</p>
                 </div>
             </div>
 

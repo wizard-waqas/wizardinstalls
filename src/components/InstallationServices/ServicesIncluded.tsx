@@ -5,7 +5,7 @@ export default function ServicesIncluded() {
     return (
         <div className="flex flex-col items-center">
             <div className="mt-6 max-w-xl text-center text-white">
-                <h4 className="text-2xl font-bold mb-2 text-gray-200">Our service includes:</h4>
+                <h4 className="text-2xl font-bold mb-2 text-gray-300">Our service includes:</h4>
 
                 <ul className="space-y-4">
                     <ServiceItem icon={"location"} description={"Mobile installation at your location"}/>

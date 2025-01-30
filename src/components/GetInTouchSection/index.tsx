@@ -43,7 +43,12 @@ const GetInTouchSection = () => {
                 timestamp: new Date(),
             });
             toast.dismiss(toastId);
-            toast.success('Your details have been submitted successfully!');
+            if (result.success) {
+                toast.success('Your details have been submitted successfully!');
+            } else {
+                toast.error(result.message || 'Failed to send message. Please try again.');
+                return false
+            }
             return true
         } catch (error) {
             toast.error('Failed to submit your details. Please try again later.');
@@ -54,13 +59,16 @@ const GetInTouchSection = () => {
 
 
     return (
-        <section className="bg-black text-white py-16 px-8 text-center">
+        <section className="bg-black text-white mt-8 pb-16 mx-8 text-center" id="information-form">
             <h2 className="text-4xl font-bold mb-4 text-red-500">
                 Interested? Let's talk.
             </h2>
 
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-400 mb-4">
                 Provide your details below and we'll contact you to discuss your dashcam installation needs.
+            </p>
+            <p className="text-gray-400 mb-8">
+                Or shoot us a message now: <a href="tel:347-433-5693" className="text-red-300">(347)-433-5693</a>
             </p>
 
             <div className="max-w-lg mx-auto text-left">

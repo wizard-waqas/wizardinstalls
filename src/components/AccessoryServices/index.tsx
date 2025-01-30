@@ -9,12 +9,6 @@ export default function AccessoryServices() {
             </h3>
             <h4 className={"mx-4 mt-4 mb-8 font-bold text-gray-200 text-center text-xl"}>Enhance your ride experience with our quality of life add-ons.</h4>
 
-            {/*<AccessoryOption*/}
-            {/*    imageSrc={"parked-recording.png"}*/}
-            {/*    title={"24/7 Dashcam Recording"}*/}
-            {/*    description={"Hardwire your dashcam to the battery for 24/7 surveillance."}*/}
-            {/*/>*/}
-            {/*<GreyDivider/>*/}
             <AccessoryOption
                 imageSrc={"led-strip-lights.png"}
                 title={"LED Strip Kit"}
@@ -58,6 +52,6 @@ export default function AccessoryServices() {
 
 const GreyDivider = () => {
     return (
-        <div className={"w-11/12 rounded-md border-b-2 border-gray-500"}/>
+        <div className={"w-11/12 rounded-md border-b-2 my-6 border-gray-500"}/>
     )
 }
