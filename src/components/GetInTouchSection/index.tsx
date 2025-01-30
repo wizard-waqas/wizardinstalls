@@ -62,10 +62,10 @@ const GetInTouchSection = () => {
             </h2>
 
             <p className="text-gray-400 mb-4">
-                Provide your details below and we'll contact you to discuss your dashcam installation needs.
-            </p>
-            <p className="text-gray-400 mb-8">
-                Or shoot us a message now: <a href="tel:347-433-5693" className="text-red-300">(347)-433-5693</a>
+                Ready to get a dashcam installed?&nbsp;
+                Message us at <a href="tel:347-433-5693" className="text-red-300">(347)-433-5693</a> or provide your
+                details below.&nbsp;
+                We’re here to help!
             </p>
 
             <div className="max-w-lg mx-auto text-left">

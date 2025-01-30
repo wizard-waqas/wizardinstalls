@@ -9,7 +9,7 @@ export default function SplashSection() {
         <div className="relative h-screen w-full">
             <Image
                 src="/lambo.jpg"
-                alt="Car Background"
+                alt="Wizard Dashcam Installs offers expert, mobile dashcam installation services for cars, trucks, and fleet vehicles. Whether you need front and rear dashcam setups, 24/7 recording, or Apple Carplay installation, we’ve got you covered. Serving Woodbridge, Jersey City, and surrounding areas with fast, reliable, and affordable dashcam installation."
                 fill
                 className="object-cover -z-10 "
                 priority

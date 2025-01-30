@@ -6,7 +6,7 @@ export default function ServiceDescription({selectedService}: { selectedService:
             {selectedService === "front"
                 ? (
                     <h4 className={"text-center text-md mx-4 text-gray-200 my-4"}>
-                        Capture every detail of your journey with a front-facing dashcam.&nbsp;
+                        Capture every detail of your journey with an front-facing dashcam.&nbsp;
                         Perfect for recording your drive and providing evidence in case of incidents.
                     </h4>
                 ) : (

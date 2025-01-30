@@ -9,6 +9,9 @@ export default function DashCamPackages() {
 
     const imageSrc =
         selectedService === "front" ? "/installation-services/front-dashcam.jpg" : "/installation-services/front-and-rear-dashcam.png";
+    const imageAlt = selectedService === "front"
+        ? "Thinkware F70 Pro Front Dashcam"
+        : "RedTiger F7N Pro Front and Rear Dashcam";
 
     const handleServiceChange = (service: string) => {
         setSelectedService(service);
@@ -36,7 +39,7 @@ export default function DashCamPackages() {
             <div className="relative rounded-3xl overflow-hidden w-[375px] h-[300px] ">
                 <Image
                     src={imageSrc}
-                    alt={`${selectedService} dashcam image`}
+                    alt={imageAlt}
                     fill
                 />
             </div>
