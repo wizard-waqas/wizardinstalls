@@ -31,9 +31,7 @@ export default function RootLayout({
 
         </Head>
 
-        <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+        <body className={`antialiased ${rubik.className}`}>
         <Toaster/>
         {children}
         </body>
