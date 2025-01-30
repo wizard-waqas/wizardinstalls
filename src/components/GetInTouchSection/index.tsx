@@ -40,15 +40,12 @@ const GetInTouchSection = () => {
             const toastId = toast.loading('Submitting your details...');
             await setDoc(doc(collection(db, collectionName), docId), {
                 ...formData,
-                timestamp: new Date(),
+                id: docId,
+                submitDate: date.toDateString(),
+                contactedClient: false
             });
-            toast.dismiss(toastId);
-            if (result.success) {
-                toast.success('Your details have been submitted successfully!');
-            } else {
-                toast.error(result.message || 'Failed to send message. Please try again.');
-                return false
-            }
+
+            toast.success('Your details have been submitted successfully!', {id: toastId});
             return true
         } catch (error) {
             toast.error('Failed to submit your details. Please try again later.');
