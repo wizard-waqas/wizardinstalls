@@ -29,6 +29,11 @@ export default function SplashSection() {
                     Mobile dashcam installations servicing <br/>Woodbridge, Jersey City, and surrounding areas.
                 </h3>
 
+                <h5 className={"hidden md:block mt-8 text-yellow-500 underline text-center"}>
+                    Sorry we have not yet made our website responsive for larger displays!
+                    <br/>Please view on mobile.
+                </h5>
+
                 <a className={"flex flex-col items-center"} href="#installation-services">
                     <span className={" border-2 px-4 py-4 rounded-xl mt-12 text-xl"}>
                         Installations starting at $70
