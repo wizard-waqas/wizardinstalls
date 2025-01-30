@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react"
-import {GetInTouchFormData} from "@/types";
+import React from "react"
+import {ClientInfo} from "@/types";
 
 interface InterestedInHardwireToggleProps {
-    formData: GetInTouchFormData;
+    formData: ClientInfo;
     setFormData: any;
 }
 export default function InterestedInHardwireToggle({formData, setFormData}: InterestedInHardwireToggleProps) {

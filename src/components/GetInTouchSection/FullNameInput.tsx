@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from "react"
-import {GetInTouchFormData} from "@/types";
+import React from "react"
+import {ClientInfo} from "@/types";
 
 interface FullNameInputProps {
-    formData: GetInTouchFormData;
+    formData: ClientInfo;
     setFormData: any;
-    errors: any;
 }
-export default function FullNameInput({formData, setFormData, errors}: FullNameInputProps) {
+export default function FullNameInput({formData, setFormData}: FullNameInputProps) {
     return (
         <div className="mb-6">
             <label className="block mb-2">
@@ -20,9 +19,6 @@ export default function FullNameInput({formData, setFormData, errors}: FullNameI
                 className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500"
                 required
             />
-            {errors.fullName && (
-                <span className="text-red-500 text-sm">This field is required</span>
-            )}
         </div>
     )
 }

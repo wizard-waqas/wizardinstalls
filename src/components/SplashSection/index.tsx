@@ -1,9 +1,6 @@
-import React, {useEffect} from "react"
+import React from "react"
 import Image from "next/image";
 import {IoIosArrowDown} from "react-icons/io";
-import {useRouter} from "next/router";
-import {analytics} from "@/firebase";
-import {logEvent} from "@firebase/analytics";
 
 export default function SplashSection() {
 

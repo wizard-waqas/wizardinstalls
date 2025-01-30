@@ -15,10 +15,6 @@ const GetInTouchSection = () => {
         vehicleInfo: '',
         recordingInterest: false // Toggle state
     });
-    const [errors, setErrors] = useState({
-        fullName: false,
-        contactInfo: false
-    });
 
     const handleSubmit = async () => {
         const {fullName, contactInfo} = formData;
@@ -37,11 +33,12 @@ const GetInTouchSection = () => {
         try {
             const date = new Date();
             const formattedDate = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${date.getFullYear()}`;
-            const randomNumber = Math.floor(1000 + Math.random() * 9000); // Random 4-digit number
+            const randomNumber = Math.floor(1000 + Math.random() * 9000);
             const docId = `${formattedDate}-${fullName.replace(/\s+/g, '-')}-${randomNumber}`;
+            const collectionName = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "interested-clients" : "test-clients";
 
             const toastId = toast.loading('Submitting your details...');
-            await setDoc(doc(collection(db, "interested-clients"), docId), {
+            await setDoc(doc(collection(db, collectionName), docId), {
                 ...formData,
                 timestamp: new Date(),
             });
@@ -51,6 +48,7 @@ const GetInTouchSection = () => {
         } catch (error) {
             toast.error('Failed to submit your details. Please try again later.');
             console.error('Error submitting form:', error);
+            return false
         }
     };
 
@@ -66,7 +64,7 @@ const GetInTouchSection = () => {
             </p>
 
             <div className="max-w-lg mx-auto text-left">
-                <FullNameInput formData={formData} setFormData={setFormData} errors={errors}/>
+                <FullNameInput formData={formData} setFormData={setFormData}/>
                 <ContactInput formData={formData} setFormData={setFormData}/>
                 <CarInfoInput formData={formData} setFormData={setFormData}/>
                 <InterestedInHardwireToggle formData={formData} setFormData={setFormData}/>

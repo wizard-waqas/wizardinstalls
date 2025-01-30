@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react"
 import {FaAt, FaPhone} from "react-icons/fa";
-import {GetInTouchFormData} from "@/types";
+import {ClientInfo} from "@/types";
 
 interface ContactInputProps {
-    formData: GetInTouchFormData
+    formData: ClientInfo
     setFormData: any
 }
 export default function ContactInput({formData, setFormData}: ContactInputProps) {

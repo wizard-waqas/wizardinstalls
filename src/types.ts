@@ -1,4 +1,4 @@
-export interface GetInTouchFormData {
+export interface ClientInfo {
     fullName: string;
     contactInfo: string;
     vehicleInfo: string;

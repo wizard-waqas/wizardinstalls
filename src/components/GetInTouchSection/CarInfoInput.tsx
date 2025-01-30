@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react"
-import {GetInTouchFormData} from "@/types";
+import {ClientInfo} from "@/types";
 
 interface CarInfoInputProps {
-    formData: GetInTouchFormData;
+    formData: ClientInfo;
     setFormData: any;
 }
 export default function CarInfoInput({formData, setFormData}: CarInfoInputProps) {
