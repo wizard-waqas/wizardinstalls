@@ -25,7 +25,7 @@ export default function ClientsPage() {
         }
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
 
         if (pin === process.env.NEXT_PUBLIC_CLIENT_INFO_PIN) {
