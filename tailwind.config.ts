@@ -8,7 +8,7 @@ export default {
     ],
     theme: {
         extend: {
-           keyframes: {
+            keyframes: {
                 bounceFade: {
                     '0%': {
                         transform: 'translateY(0) scaleX(0.75)', // Start at 50% width
@@ -39,5 +39,6 @@ export default {
             }
         },
     },
-    plugins: [],
+    // plugins: [],
+    plugins: [require("@tailwindcss/forms")],
 } satisfies Config;

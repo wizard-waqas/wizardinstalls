@@ -10,7 +10,7 @@ export default function ServicesIncluded() {
                 <ul className="space-y-4">
                     <ServiceItem icon={"location"} description={"Mobile installation at your location"}/>
                     <ServiceItem icon={"cable"} description={"Hidden wires for a clean & integrated finish"}/>
-                    <ServiceItem icon={"record"} description={"Ensuring the dashcam records and saves footage"}/>
+                    <ServiceItem icon={"record"} description={"Ensure the dashcam records and saves footage"}/>
                 </ul>
             </div>
         </div>

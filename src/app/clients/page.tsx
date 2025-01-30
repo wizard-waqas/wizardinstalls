@@ -39,9 +39,9 @@ export default function ClientsPage() {
     };
 
     const handleCheckboxChange = async (clientId: string | undefined, clientName: string, currentContactedState: boolean | undefined) => {
-        if (!clientId || !currentContactedState) return;
+        if (!clientId) return;
 
-        const toastId = toast.loading('Updating client: ' + clientName);
+        const toastId = toast.loading(`Updating client: ${clientName}`);
         try {
             const collectionName = process.env.ENVIRONMENT === "production" ? "interested-clients" : "test-clients";
             await updateDoc(doc(db, collectionName, clientId), {
@@ -53,18 +53,17 @@ export default function ClientsPage() {
                     client.id === clientId ? {...client, contactedClient: !currentContactedState} : client
                 )
             );
-            toast.success('Client updated successfully!', {id: toastId});
+            toast.success(`Updated: ${clientName}`, {id: toastId});
         } catch (err) {
             console.error("Error updating client:", err);
             toast.error('Failed to update client. Please try again later.', {id: toastId});
         }
     };
 
-    return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white px-4">
-            <h1 className="text-2xl font-bold mb-4">Client List</h1>
-
-            {!isAuthorized ? (
+    if (!isAuthorized) {
+        return (
+            <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white px-4">
+                <h1 className="text-2xl font-bold mb-4">Client List</h1>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                     <input
                         type="text"
@@ -79,33 +78,49 @@ export default function ClientsPage() {
                         Enter
                     </button>
                 </form>
-            ) : (
-                <div className="w-full max-w-lg bg-gray-800 p-4 rounded-lg">
-                    {clients.length > 0 ? (
-                        <ul className="space-y-2">
-                            {clients.map((client: ClientInfo) => (
-                                <li key={client.fullName} className="border-b border-gray-600 py-2 space-y-1">
-                                    <div className={"flex justify-between"}>
-                                        <p className="font-semibold">{client.fullName}</p>
-                                        <p className="font-bold text-red-500">{formatContactInfo(client.contactInfo)}</p>
-                                    </div>
-                                    <p className=" font-bold">{client.vehicleInfo}</p>
-                                    <p>{client.submitDate}</p>
-                                    <div className={"flex justify-between"}>
-                                        <p className="text-sm text-gray-400">{client.recordingInterest ? "Interested in hardwire kit" : "Not interested in hardwire kit"}</p>
-                                        <input type="checkbox" checked={client.contactedClient}
-                                               onChange={() => handleCheckboxChange(client.id, client.fullName, client.contactedClient)}/>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>No clients found.</p>
-                    )}
-                </div>
-            )}
+            </div>
+        )
+    }
+
+    return (
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white px-4">
+            <h1 className="text-2xl font-bold mb-4">Client List</h1>
+
+            <div className="w-full max-w-lg bg-gray-800 p-4 rounded-lg">
+                {clients.length > 0 ? (
+                    <ul className="space-y-2">
+                        {clients.map((client: ClientInfo) => (
+                            <ClientCard key={client.id} client={client} handleCheckboxChange={handleCheckboxChange}/>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No clients found.</p>
+                )}
+            </div>
         </div>
     );
+}
+
+const ClientCard = ({client, handleCheckboxChange}: { client: ClientInfo, handleCheckboxChange: any }) => {
+    return (
+        <li key={client.fullName} className="border-b border-gray-600 py-2 space-y-1">
+            <div className={"flex justify-between"}>
+                <p className="font-semibold">{client.fullName}</p>
+                <p className="font-bold text-red-500">{formatContactInfo(client.contactInfo)}</p>
+            </div>
+            <p className=" font-bold">{client.vehicleInfo}</p>
+            <p>{client.submitDate}</p>
+            <div className={"flex justify-between"}>
+                <p className="text-sm text-gray-400">{client.recordingInterest ? "Interested in hardwire kit" : "Not interested in hardwire kit"}</p>
+                <div className={"flex space-x-2 items-center"}>
+                    <label htmlFor={client.id}>Contacted?</label>
+                    <input id={client.id} type="checkbox" checked={client.contactedClient}
+                           className={"w-4  h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"}
+                           onChange={() => handleCheckboxChange(client.id, client.fullName, client.contactedClient)}/>
+                </div>
+            </div>
+        </li>
+    )
 }
 
 const formatContactInfo = (contactInfo: string) => {

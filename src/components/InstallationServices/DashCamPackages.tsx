@@ -1,6 +1,8 @@
 import React, {useState} from "react"
 import Image from "next/image";
 import {capitalize} from "@/utils";
+import ServiceDescription from "@/components/InstallationServices/ServiceDescription";
+import SelectServiceButton from "@/components/InstallationServices/SelectServiceButton";
 
 export default function DashCamPackages() {
     const [selectedService, setSelectedService] = useState("front");
@@ -45,54 +47,6 @@ export default function DashCamPackages() {
             </div>
 
         </div>
-    )
-}
-
-const ServiceDescription = ({selectedService}: { selectedService: string }) => {
-    return (
-        <>
-            {selectedService === "front"
-                ? (
-                    <h4 className={"text-center text-md mx-4 text-gray-200 my-4"}>
-                        Capture every detail of your journey with a front-facing dashcam.&nbsp;
-                        Perfect for recording your drive and providing evidence in case of incidents.
-                    </h4>
-                ) : (
-                    <h4 className={"text-center text-md mx-4 text-gray-200 my-4"}>
-                        Get complete coverage with high-quality front and rear dashcams.&nbsp;
-                        Monitor both ends of your vehicle for maximum accident protection and peace of mind on the road.
-                    </h4>
-                )
-            }
-            </>
-    )
-}
-
-interface SelectServiceButtonProps {
-    selectedService: string;
-    handleServiceChange: (service: string) => void;
-    service: string;
-    price: number;
-}
-
-const SelectServiceButton = ({selectedService, handleServiceChange, service, price}: SelectServiceButtonProps) => {
-
-    return (
-        <button
-            onClick={() => handleServiceChange(service)}
-            className={`w-full flex justify-center items-center space-x-2 px-2 py-2 transition-all ${
-                selectedService === service
-                    ? "bg-gray-800 text-white"
-                    : " text-gray-200 bg-gray-600"
-            }`}
-        >
-            <span>{capitalize(service)}</span>
-            {selectedService === service && (
-                <div className="bg-white px-2  py-1 text-black rounded-full flex items-center justify-center">
-                    ${price}
-                </div>
-            )}
-        </button>
     )
 }
 

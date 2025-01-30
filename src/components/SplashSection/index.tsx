@@ -24,6 +24,7 @@ export default function SplashSection() {
                 <h2 className="text-center font-bold text-gray-300 text-4xl mt-8">
                     For when they dash,<br/> you've got the cam.
                 </h2>
+                {/*📍*/}
                 <h3 className={"text-center mt-4 text-gray-400"}>
                     Mobile dashcam installations servicing <br/>Woodbridge, Jersey City, and surrounding areas.
                 </h3>
