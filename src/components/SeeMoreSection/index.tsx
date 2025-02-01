@@ -18,7 +18,7 @@ export default function SeeMoreSection() {
                 </div>
             </a>
 
-            <a href={"https://g.page/r/CZMiFrRtnfdZEBM/review"} className={"flex justify-center mt-4"}>
+            <a href={"https://www.google.com/search?q=wizard+dashcam+installs"} className={"flex justify-center mt-4"}>
                 <div className={"flex items-center bg-white w-11/12 rounded-xl p-2"}>
                     <img className={"w-16 mr-2"} src={'/see-more/google-business.png'} alt="Google Review"/>
                     <div className={"flex flex-col text-black w-full"}>
