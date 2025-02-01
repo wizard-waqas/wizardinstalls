@@ -8,6 +8,7 @@ import {usePathname} from "next/navigation"; // Use next/navigation for App Rout
 import {analytics} from "@/firebase";
 import {logEvent} from "@firebase/analytics";
 import GetInTouchSection from "@/components/GetInTouchSection";
+import FAQSection from "@/components/FAQSection";
 
 export default function Home() {
     const pathname = usePathname(); // Get current path
@@ -26,6 +27,7 @@ export default function Home() {
             <DashcamPackages/>
             <AccessoryServices/>
             <GetInTouchSection/>
+            <FAQSection/>
         </div>
     );
 }
