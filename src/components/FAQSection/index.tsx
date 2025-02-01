@@ -15,7 +15,7 @@ export default function FAQSection() {
                     <FAQItem question="Can I install a dashcam myself?"
                              answer="You can do anything! But with our service you can save yourself time and forget the risk of damaging your vehicle."/>
                     <FAQItem question="Is my dashcam footage private?"
-                             answer="Yes! Its stored locally on an sd card on the dashcam"/>
+                             answer="Yes! Its stored locally on an sd card on the dashcam."/>
                     {/*<FAQItem question="Do you offer any discounts or bundle packages?"*/}
                     {/*         answer="We can work out a deal for clients looking to install dash cams on more than one vehicle at once."/>*/}
                     {/*<FAQItem question="What happens if something goes wrong with my dashcam after installation"*/}
@@ -25,7 +25,7 @@ export default function FAQSection() {
                     <FAQItem question="Where do you provide your dashcam installation services?"
                              answer="We are a mobile service, we come to you!"/>
                     <FAQItem question="What is the cost of installing a dashcam?"
-                             answer="For our service it is $70 for front dashcam and $120 for a rear dashcam. You can also see our [Dashcam Packages section](#dashcam-packages)"/>
+                             answer="For our service it is $70 for front dashcam and $120 for a rear dashcam. You can also see our [Dashcam Packages section](#dashcam-packages)."/>
                 </div>
             </div>
         </section>
