@@ -57,7 +57,7 @@ const GetInTouchSection = () => {
 
     return (
         <section className="bg-black text-white mt-8 pb-16 mx-8 text-center" id="information-form">
-            <h2 className="text-4xl font-bold mb-4 text-red-500">
+            <h2 className="text-3xl font-bold mb-4 text-red-500">
                 Interested? Let's talk.
             </h2>
 

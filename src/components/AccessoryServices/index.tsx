@@ -7,7 +7,7 @@ export default function AccessoryServices() {
             <h3 className="text-center text-red-500 font-bold text-2xl">
                 ACCESSORY SERVICES
             </h3>
-            <h4 className={"mx-4 mt-4 mb-8 font-bold text-gray-200 text-center text-xl"}>Enhance your ride experience with our quality of life add-ons.</h4>
+            <h4 className={"mx-4 mt-4 mb-8 text-gray-400 text-center"}>Enhance your ride experience with our quality of life add-ons.</h4>
 
             <AccessoryOption
                 imageSrc={"led-strip-lights.png"}
