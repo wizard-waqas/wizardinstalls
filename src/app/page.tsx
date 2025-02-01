@@ -9,6 +9,7 @@ import {analytics} from "@/firebase";
 import {logEvent} from "@firebase/analytics";
 import GetInTouchSection from "@/components/GetInTouchSection";
 import FAQSection from "@/components/FAQSection";
+import SeeMoreSection from "@/components/SeeMoreSection";
 
 export default function Home() {
     const pathname = usePathname(); // Get current path
@@ -28,6 +29,7 @@ export default function Home() {
             <AccessoryServices/>
             <GetInTouchSection/>
             <FAQSection/>
+            <SeeMoreSection/>
         </div>
     );
 }

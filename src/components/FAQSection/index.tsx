@@ -4,8 +4,8 @@ import FAQItem from "@/components/FAQSection/FAQItem";
 export default function FAQSection() {
     return (
         <section id="faq-section" className="py-8 bg-grey-800">
-            <h3 className="text-center text-red-500 font-bold text-2xl">
-                Frequently Asked Questions (FAQ)
+            <h3 className="text-center text-red-500 font-bold text-xl">
+                (FAQ) Frequently Asked Questions
             </h3>
             <div className="flex flex-col items-center mt-8">
                 <div className="w-full md:w-1/2">
