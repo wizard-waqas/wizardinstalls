@@ -25,7 +25,7 @@ interface ServiceItemProps {
 const ServiceItem: React.FC<ServiceItemProps> = ({ icon, description }) => {
     return (
         <li className={"bg-grey-400 p-4 mx-4 rounded-lg flex items-center"}>
-            <Image src={`/installation-services/${icon}.png`} width={44} height={44} alt={icon}/>
+            <Image src={`/dashcam-packages/${icon}.png`} width={44} height={44} alt={icon}/>
             <span className={"ml-4 text-left"}>{description}</span>
         </li>
     );

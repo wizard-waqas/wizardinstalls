@@ -8,7 +8,7 @@ export default function DashCamPackages() {
     const [selectedService, setSelectedService] = useState("front");
 
     const imageSrc =
-        selectedService === "front" ? "/installation-services/front-dashcam.jpg" : "/installation-services/front-and-rear-dashcam.png";
+        selectedService === "front" ? "/dashcam-packages/front-dashcam.jpg" : "/dashcam-packages/front-and-rear-dashcam.png";
     const imageAlt = selectedService === "front"
         ? "Thinkware F70 Pro Front Dashcam"
         : "RedTiger F7N Pro Front and Rear Dashcam";
@@ -77,7 +77,7 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
         >
             <div className={"flex flex-col  items-center space-y-2"}>
                 <span>Order now on</span>
-                <img alt={"amazon logo"} className={"w-16  h-6"} src={"/installation-services/whiteamazonlogo.png"}/>
+                <img alt={"amazon logo"} className={"w-16  h-6"} src={"/dashcam-packages/whiteamazonlogo.png"}/>
             </div>
 
         </a>

@@ -7,7 +7,7 @@ import YouShouldKnow from "@/components/DashcamPackages/YouShouldKnow";
 export default function DashcamPackages() {
 
     return (
-        <section id="installation-services" className="py-8 bg-grey-800">
+        <section id="dashcam-packages" className="py-8 bg-grey-800">
             <h3 className="text-center text-red-500 font-bold text-2xl">
                 Dashcam Packages
             </h3>

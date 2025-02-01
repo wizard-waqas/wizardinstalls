@@ -34,7 +34,7 @@ export default function SplashSection() {
                     <br/>Please view on mobile.
                 </h5>
 
-                <a className={"flex flex-col items-center"} href="#installation-services">
+                <a className={"flex flex-col items-center"} href="#dashcam-packages">
                     <span className={" border-2 px-4 py-4 rounded-xl mt-12 text-xl"}>
                         Installations starting at $70
                     </span>
