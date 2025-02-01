@@ -1,10 +1,10 @@
 "use client";
 
-import DashCamPackages from "@/components/InstallationServices/DashCamPackages";
-import ServicesIncluded from "@/components/InstallationServices/ServicesIncluded";
-import YouShouldKnow from "@/components/InstallationServices/YouShouldKnow";
+import DashCamPackages from "@/components/DashcamPackages/DashCamPackages";
+import ServicesIncluded from "@/components/DashcamPackages/ServicesIncluded";
+import YouShouldKnow from "@/components/DashcamPackages/YouShouldKnow";
 
-export default function InstallationServices() {
+export default function DashcamPackages() {
 
     return (
         <section id="installation-services" className="py-8 bg-grey-800">

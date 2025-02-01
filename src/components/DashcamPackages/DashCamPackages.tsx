@@ -1,8 +1,8 @@
 import React, {useState} from "react"
 import Image from "next/image";
 import {capitalize} from "@/utils";
-import ServiceDescription from "@/components/InstallationServices/ServiceDescription";
-import SelectServiceButton from "@/components/InstallationServices/SelectServiceButton";
+import ServiceDescription from "@/components/DashcamPackages/ServiceDescription";
+import SelectServiceButton from "@/components/DashcamPackages/SelectServiceButton";
 
 export default function DashCamPackages() {
     const [selectedService, setSelectedService] = useState("front");

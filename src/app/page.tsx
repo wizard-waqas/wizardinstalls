@@ -1,6 +1,6 @@
 "use client"; // Required for client-side hooks
 
-import InstallationServices from "@/components/InstallationServices";
+import DashcamPackages from "../components/DashcamPackages";
 import AccessoryServices from "@/components/AccessoryServices";
 import SplashSection from "@/components/SplashSection";
 import {useEffect} from "react";
@@ -23,7 +23,7 @@ export default function Home() {
     return (
         <div className="relative min-h-screen w-full">
             <SplashSection/>
-            <InstallationServices/>
+            <DashcamPackages/>
             <AccessoryServices/>
             <GetInTouchSection/>
         </div>
