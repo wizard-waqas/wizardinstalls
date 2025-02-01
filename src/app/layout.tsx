@@ -3,6 +3,7 @@ import "./globals.css";
 import Head from "next/head";
 import {Toaster} from "react-hot-toast";
 import {rubik} from "@/fonts";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
     title: "Wizard Dashcam Installs",
@@ -65,6 +66,7 @@ export default function RootLayout({
         <body className={`antialiased ${rubik.className}`}>
         <Toaster/>
         {children}
+        <Analytics/>
         </body>
         </html>
     );
