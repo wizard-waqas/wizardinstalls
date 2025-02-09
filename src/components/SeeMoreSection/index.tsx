@@ -13,7 +13,7 @@ export default function SeeMoreSection() {
                     <img className={"w-16 mr-2"} src={'/see-more/ig.png'} alt="Instagram -"/>
                     <div className={"flex flex-col text-black w-full"}>
                         {/*<span className={"text-xl text-center"}>Follow us</span>*/}
-                        <p className={" font-bold text-lg text-center"}>@WIZARD.DASHCAM.INSTALLS</p>
+                        <p className={" font-bold text-lg text-center"}>@Wizard.Dashcam.Installs</p>
                     </div>
                 </div>
             </a>

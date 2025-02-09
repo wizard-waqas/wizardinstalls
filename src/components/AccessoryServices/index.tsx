@@ -7,19 +7,21 @@ export default function AccessoryServices() {
             <h3 className="text-center text-red-500 font-bold text-2xl">
                 ACCESSORY SERVICES
             </h3>
-            <h4 className={"mx-4 mt-4 mb-8 text-gray-400 text-center"}>Enhance your ride experience with our quality of life add-ons.</h4>
+            <h4 className={"mx-4 mt-4 mb-8 text-gray-400 text-center"}>
+                Enhance your ride experience with our quality of life add-ons. Prices shown include product and service.
+            </h4>
 
-            <AccessoryOption
-                imageSrc={"led-strip-lights.png"}
-                title={"LED Strip Kit"}
-                description={"RGB accent lighting to add a touch of color to your vehicle."}
-                price={80}
-            />
-            <GreyDivider/>
+            {/*<AccessoryOption*/}
+            {/*    imageSrc={"led-strip-lights.png"}*/}
+            {/*    title={"LED Strip Kit"}*/}
+            {/*    description={"RGB accent lighting to add a touch of color to your vehicle."}*/}
+            {/*    price={80}*/}
+            {/*/>*/}
+            {/*<GreyDivider/>*/}
             <AccessoryOption
                 imageSrc={"welcome-lights.png"}
                 title={"Door Welcome Lights"}
-                description={"Light up the ground as you open your door for a stylish, safer exit."}
+                description={"Light up the ground as you open your door for a stylish exit."}
                 price={80}
             />
             <GreyDivider/>
@@ -27,7 +29,7 @@ export default function AccessoryServices() {
                 imageSrc={"interior-led.png"}
                 title={"LED Interior Lights"}
                 description={"Brighten your cabin with modern, long-lasting LED bulbs."}
-                price={50}
+                price={60}
             />
             <GreyDivider/>
             <AccessoryOption
