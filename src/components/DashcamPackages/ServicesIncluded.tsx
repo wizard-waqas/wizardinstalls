@@ -4,10 +4,10 @@ import Image from "next/image";
 export default function ServicesIncluded() {
     return (
         <div className="flex flex-col items-center">
-            <div className="mt-6 max-w-xl text-center text-white">
+            <div className="mt-6 max-w-xl text-center text-white w-full">
                 <h4 className="text-2xl font-bold mb-2 text-gray-300">Our service includes:</h4>
 
-                <ul className="space-y-4">
+                <ul className="flex flex-col items-center space-y-4 w-full">
                     <ServiceItem icon={"location"} description={"Mobile installation at your location"}/>
                     <ServiceItem icon={"cable"} description={"Hidden wires for a clean & integrated finish"}/>
                     <ServiceItem icon={"record"} description={"Ensure the dashcam records and saves footage"}/>
@@ -24,7 +24,7 @@ interface ServiceItemProps {
 
 const ServiceItem: React.FC<ServiceItemProps> = ({ icon, description }) => {
     return (
-        <li className={"bg-grey-400 p-4 mx-4 rounded-lg flex items-center"}>
+        <li className={"bg-grey-400 p-4 rounded-lg flex  items-center w-11/12 lg:w-full"}>
             <Image src={`/dashcam-packages/${icon}.png`} width={44} height={44} alt={icon}/>
             <span className={"ml-4 text-left"}>{description}</span>
         </li>

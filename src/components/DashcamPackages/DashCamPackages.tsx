@@ -19,7 +19,7 @@ export default function DashCamPackages() {
 
     return (
         <div className={"flex flex-col items-center mt-6"}>
-            <div className="flex justify-center w-11/12 rounded-lg overflow-hidden">
+            <div className="flex justify-center w-11/12 lg:w-1/3 rounded-lg overflow-hidden">
                 <SelectServiceButton
                     selectedService={selectedService}
                     handleServiceChange={handleServiceChange}
@@ -44,7 +44,7 @@ export default function DashCamPackages() {
                 />
             </div>
 
-            <div className={"flex mt-4 mx-4 space-x-4 w-11/12"}>
+            <div className={"flex mt-4 mx-4 space-x-4 w-11/12 lg:w-1/3"}>
                 <BuyOnAmazonButton selectedService={selectedService}/>
                 <ContactUsButton/>
             </div>
@@ -75,7 +75,7 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
             rel="noreferrer"
             className="w-full flex justify-center items-center space-x-4 px-4 py-2 bg-black text-white rounded-lg"
         >
-            <div className={"flex flex-col  items-center space-y-2"}>
+            <div className={"flex flex-col items-center space-y-2"}>
                 <span>Order now on</span>
                 <img alt={"amazon logo"} className={"w-16  h-6"} src={"/dashcam-packages/whiteamazonlogo.png"}/>
             </div>

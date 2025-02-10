@@ -11,13 +11,13 @@ export default function SplashSection() {
                 src="/lambo.jpg"
                 alt="Wizard Dashcam Installs offers expert, mobile dashcam installation services for cars, trucks, and fleet vehicles. Whether you need front and rear dashcam setups, 24/7 recording, or Apple Carplay installation, we’ve got you covered. Serving Woodbridge, Jersey City, and surrounding areas with fast, reliable, and affordable dashcam installation."
                 fill
-                className="object-cover -z-10 "
+                className="object-cover -z-10"
                 priority
             />
 
             <div className="relative flex flex-col items-center text-white pt-8">
-                <div className="bg-red-500 mx-8 w-5/6 py-2 flex rounded-lg items-center justify-center">
-                    <h1 className={`text-white text-center text-xl font-bold`}>
+                <div className="bg-red-500 mx-8 w-5/6 lg:w-1/3 py-2 flex rounded-lg items-center justify-center">
+                    <h1 className={`text-white text-center text-xl font-bold lg:text-3xl`}>
                         WIZARD DASHCAM INSTALLS
                     </h1>
                 </div>
@@ -28,11 +28,6 @@ export default function SplashSection() {
                 <h3 className={"text-center mt-4 text-gray-400"}>
                     Mobile dashcam installations servicing <br/>Woodbridge, Jersey City, and surrounding areas.
                 </h3>
-
-                <h5 className={"hidden md:block mt-8 text-yellow-500 underline text-center"}>
-                    Sorry we have not yet made our website responsive for larger displays!
-                    <br/>Please view on mobile.
-                </h5>
 
                 <a className={"flex flex-col items-center"} href="#dashcam-packages">
                     <span className={" border-2 px-4 py-4 rounded-xl mt-12 text-xl"}>

@@ -22,7 +22,7 @@ export default function AccessoryOption({imageSrc, title, description, price}: A
 
     return (
         <div className="relative">
-            <div className="flex mx-4 items-center justify-between space-x-2">
+            <div className="flex items-center justify-between space-x-2">
                 <div className="flex-shrink-0">
                     <img
                         src={`/accessory-services/${imageSrc}`}

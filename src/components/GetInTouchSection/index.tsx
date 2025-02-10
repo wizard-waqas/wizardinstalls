@@ -56,19 +56,19 @@ const GetInTouchSection = () => {
 
 
     return (
-        <section className="bg-black text-white mt-8 pb-16 mx-8 text-center" id="information-form">
+        <section className="flex flex-col items-center bg-black text-white mt-8 pb-16 text-center" id="information-form">
             <h2 className="text-3xl font-bold mb-4 text-red-500">
                 Interested? Let's talk.
             </h2>
 
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-400 mb-4 text-wrap w-11/12 lg:w-1/3">
                 Ready to get a dashcam installed?&nbsp;
                 Message us at <a href="tel:347-433-5693" className="text-red-300">(347)-433-5693</a> or provide your
                 details below.&nbsp;
                 We’re here to help!
             </p>
 
-            <div className="max-w-lg mx-auto text-left">
+            <div className="text-left w-11/12 lg:w-1/3 ">
                 <FullNameInput formData={formData} setFormData={setFormData}/>
                 <ContactInput formData={formData} setFormData={setFormData}/>
                 <CarInfoInput formData={formData} setFormData={setFormData}/>

@@ -7,45 +7,47 @@ export default function AccessoryServices() {
             <h3 className="text-center text-red-500 font-bold text-2xl">
                 ACCESSORY SERVICES
             </h3>
-            <h4 className={"mx-4 mt-4 mb-8 text-gray-400 text-center"}>
+            <h4 className={"mx-4 mt-4 mb-8 text-gray-400 text-center text-wrap w-11/12 lg:w-1/3"}>
                 Enhance your ride experience with our quality of life add-ons. Prices shown include product and service.
             </h4>
 
-            {/*<AccessoryOption*/}
-            {/*    imageSrc={"led-strip-lights.png"}*/}
-            {/*    title={"LED Strip Kit"}*/}
-            {/*    description={"RGB accent lighting to add a touch of color to your vehicle."}*/}
-            {/*    price={80}*/}
-            {/*/>*/}
-            {/*<GreyDivider/>*/}
-            <AccessoryOption
-                imageSrc={"welcome-lights.png"}
-                title={"Door Welcome Lights"}
-                description={"Light up the ground as you open your door for a stylish exit."}
-                price={80}
-            />
-            <GreyDivider/>
-            <AccessoryOption
-                imageSrc={"interior-led.png"}
-                title={"LED Interior Lights"}
-                description={"Brighten your cabin with modern, long-lasting LED bulbs."}
-                price={60}
-            />
-            <GreyDivider/>
-            <AccessoryOption
-                imageSrc={"gps.png"}
-                title={"GPS Tracking"}
-                description={"Track and navigate your vehicle’s location with pinpoint accuracy."}
-                price={50}
-            />
-            <GreyDivider/>
-            <AccessoryOption
-                imageSrc={"blindspot-mirrors.png"}
-                title={"Blindspot Mirrors"}
-                description={"Gain extra visibility to help prevent unexpected lane-change surprises."}
-                price={30}
-            />
-            <GreyDivider/>
+            <div className={"flex flex-col items-center w-11/12 lg:w-1/3"}>
+                {/*<AccessoryOption*/}
+                {/*    imageSrc={"led-strip-lights.png"}*/}
+                {/*    title={"LED Strip Kit"}*/}
+                {/*    description={"RGB accent lighting to add a touch of color to your vehicle."}*/}
+                {/*    price={80}*/}
+                {/*/>*/}
+                {/*<GreyDivider/>*/}
+                <AccessoryOption
+                    imageSrc={"welcome-lights.png"}
+                    title={"Door Welcome Lights"}
+                    description={"Light up the ground as you open your door for a stylish exit."}
+                    price={80}
+                />
+                <GreyDivider/>
+                <AccessoryOption
+                    imageSrc={"interior-led.png"}
+                    title={"LED Interior Lights"}
+                    description={"Brighten your cabin with modern, long-lasting LED bulbs."}
+                    price={60}
+                />
+                <GreyDivider/>
+                <AccessoryOption
+                    imageSrc={"gps.png"}
+                    title={"GPS Tracking"}
+                    description={"Track and navigate your vehicle’s location with pinpoint accuracy."}
+                    price={50}
+                />
+                <GreyDivider/>
+                <AccessoryOption
+                    imageSrc={"blindspot-mirrors.png"}
+                    title={"Blindspot Mirrors"}
+                    description={"Gain extra visibility to help prevent unexpected lane-change surprises."}
+                    price={30}
+                />
+                <GreyDivider/>
+            </div>
 
 
         </section>
@@ -54,6 +56,6 @@ export default function AccessoryServices() {
 
 const GreyDivider = () => {
     return (
-        <div className={"w-11/12 rounded-md border-b-2 my-6 border-gray-500"}/>
+        <div className={"w-full rounded-md border-b-2 my-6 border-gray-500"}/>
     )
 }

@@ -9,7 +9,7 @@ export default function SeeMoreSection() {
             </h3>
 
             <a href={'https://www.instagram.com/wizard.dashcam.installs/'} className={"flex justify-center mt-4"}>
-                <div className={"flex items-center bg-white w-11/12 rounded-xl p-2"}>
+                <div className={"flex items-center bg-white w-11/12 lg:w-1/3 rounded-xl p-2"}>
                     <img className={"w-16 mr-2"} src={'/see-more/ig.png'} alt="Instagram -"/>
                     <div className={"flex flex-col text-black w-full"}>
                         {/*<span className={"text-xl text-center"}>Follow us</span>*/}
@@ -19,7 +19,7 @@ export default function SeeMoreSection() {
             </a>
 
             <a href={"https://www.google.com/search?q=wizard+dashcam+installs"} className={"flex justify-center mt-4"}>
-                <div className={"flex items-center bg-white w-11/12 rounded-xl p-2"}>
+                <div className={"flex items-center bg-white w-11/12 lg:w-1/3 rounded-xl p-2"}>
                     <img className={"w-16 mr-2"} src={'/see-more/google-business.png'} alt="Google Review"/>
                     <div className={"flex flex-col text-black w-full"}>
                         <p className={" font-bold text-lg text-center"}>See our reviews on Google</p>

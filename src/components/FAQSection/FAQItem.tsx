@@ -34,7 +34,7 @@ export default function FAQItem ({question, answer}: FAQItemProps) {
     };
 
     return (
-        <div className="flex flex-col items-start space-y-4 bg-grey-400 rounded-lg mx-4 my-2 p-4">
+        <div className="flex flex-col items-start space-y-4 bg-grey-400 rounded-lg my-2 p-4">
             <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold">Q</span>
