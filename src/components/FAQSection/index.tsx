@@ -24,8 +24,8 @@ export default function FAQSection() {
                              answer="This is where they are most helpful as they can help you get out of insurance fraud situations."/>
                     <FAQItem question="Where do you provide your dashcam installation services?"
                              answer="We are a mobile service, we come to you!"/>
-                    <FAQItem question="What is the cost of installing a dashcam?"
-                             answer="For our service it is $70 for front dashcam and $120 for a rear dashcam. You can also see our [Dashcam Packages section](#dashcam-packages)."/>
+                    {/*<FAQItem question="What is the cost of installing a dashcam?"*/}
+                    {/*         answer="For our service it is $70 for front dashcam and $120 for a rear dashcam. You can also see our [Dashcam Packages section](#dashcam-packages)."/>*/}
                 </div>
             </div>
         </section>
