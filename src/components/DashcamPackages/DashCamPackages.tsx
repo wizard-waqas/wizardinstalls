@@ -1,11 +1,12 @@
-import React, {useState} from "react"
+import React from "react"
 import Image from "next/image";
-import {capitalize} from "@/utils";
 import ServiceDescription from "@/components/DashcamPackages/ServiceDescription";
 import SelectServiceButton from "@/components/DashcamPackages/SelectServiceButton";
+import {useAtom} from "jotai";
+import {selectedServiceAtom} from "@/atoms/selectedServiceAtom";
 
 export default function DashCamPackages() {
-    const [selectedService, setSelectedService] = useState("front");
+    const [selectedService, setSelectedService] = useAtom(selectedServiceAtom);
 
     const imageSrc =
         selectedService === "front" ? "/dashcam-packages/front-dashcam.jpg" : "/dashcam-packages/front-and-rear-dashcam.png";
@@ -24,23 +25,22 @@ export default function DashCamPackages() {
                     selectedService={selectedService}
                     handleServiceChange={handleServiceChange}
                     service={"front"}
-                    price={70}
                 />
                 <SelectServiceButton
                     selectedService={selectedService}
                     handleServiceChange={handleServiceChange}
                     service={"front + rear"}
-                    price={120}
                 />
             </div>
 
             <ServiceDescription selectedService={selectedService}/>
 
-            <div className="relative rounded-3xl overflow-hidden w-[375px] h-[300px] ">
+            <div className="relative rounded-3xl overflow-hidden w-[375px] h-[350px] ">
                 <Image
                     src={imageSrc}
                     alt={imageAlt}
                     fill
+                    className="object-cover"
                 />
             </div>
 
@@ -86,7 +86,8 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
 
 const ContactUsButton = () => {
     return (
-        <a href={"#information-form"} className={"flex items-center justify-center w-full bg-red-500 text-white px-4 py-2 rounded-lg"}>
+        <a href={"#information-form"}
+           className={"flex items-center justify-center w-full bg-red-500 text-white px-4 py-2 rounded-lg"}>
             <span>Contact us</span>
         </a>
     )

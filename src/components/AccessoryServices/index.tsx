@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import AccessoryOption from "@/components/AccessoryServices/AccessoryOption";
+import GreyDivider from "@/components/GreyDivider";
 
 export default function AccessoryServices() {
     return (
@@ -48,14 +49,6 @@ export default function AccessoryServices() {
                 />
                 <GreyDivider/>
             </div>
-
-
         </section>
-    )
-}
-
-const GreyDivider = () => {
-    return (
-        <div className={"w-full rounded-md border-b-2 my-6 border-gray-500"}/>
     )
 }
