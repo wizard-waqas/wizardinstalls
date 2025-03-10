@@ -10,10 +10,10 @@ export default function SelectServiceButton({selectedService, handleServiceChang
     return (
         <button
             onClick={() => handleServiceChange(service)}
-            className={`w-full flex justify-center items-center space-x-2 px-2 py-2 transition-all ${
+            className={`w-full flex justify-center items-center space-x-2 px-2 py-2 m-1 rounded-md transition-all ${
                 selectedService === service
-                    ? "text-white bg-gray-800"
-                    : "text-gray-200 bg-gray-600"
+                    ? "text-gray-200 bg-grey-800"
+                    : "text-gray-300"
             }`}
         >
             <span>{capitalize(service)}</span>

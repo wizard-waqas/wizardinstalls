@@ -20,7 +20,7 @@ export default function DashCamPackages() {
 
     return (
         <div className={"flex flex-col items-center mt-6"}>
-            <div className="flex justify-center w-11/12 lg:w-1/3 rounded-lg overflow-hidden">
+            <div className="flex justify-center w-11/12 lg:w-1/3 rounded-lg overflow-hidden bg-grey-400 ">
                 <SelectServiceButton
                     selectedService={selectedService}
                     handleServiceChange={handleServiceChange}
@@ -35,7 +35,7 @@ export default function DashCamPackages() {
 
             <ServiceDescription selectedService={selectedService}/>
 
-            <div className="relative rounded-3xl overflow-hidden w-[375px] h-[350px] ">
+            <div className="relative rounded-lg overflow-hidden w-[375px] h-[350px] ">
                 <Image
                     src={imageSrc}
                     alt={imageAlt}

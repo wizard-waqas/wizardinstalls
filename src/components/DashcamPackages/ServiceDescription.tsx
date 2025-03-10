@@ -8,7 +8,7 @@ export default function ServiceDescription({selectedService}: { selectedService:
                     "Perfect for recording your drive and providing evidence in case of incidents."
                 : "Get complete coverage with high-quality front and rear dashcams. " +
                     "Monitor both ends of your vehicle for maximum accident protection and peace of mind on the road."
-            }
+            }&nbsp;<br/>(Note: the products shown are not sponsored.)
         </h5>
     )
 }
