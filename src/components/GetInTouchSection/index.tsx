@@ -57,9 +57,9 @@ const GetInTouchSection = () => {
 
     return (
         <section className="flex flex-col items-center bg-black text-white mt-8 pb-16 text-center" id="information-form">
-            <h2 className="text-3xl font-bold mb-4 text-red-500">
+            <h3 className="text-3xl font-bold mb-4 text-red-500">
                 Interested? Let's talk.
-            </h2>
+            </h3>
 
             <p className="text-gray-400 mb-4 text-wrap w-11/12 lg:w-1/3">
                 Ready to get a dashcam installed?&nbsp;
