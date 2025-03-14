@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
     title: "Wizard Dashcam Installs",
-    description: "Offering mobile dashcam installation services",
+    description: "Offering mobile dashcam installation services in Jersey City, Woodbridge, and surrounding areas in NJ. Record your drive and provide evidence in case of incidents.",
     keywords: [
         "dashcam installation",
         "car camera installation",

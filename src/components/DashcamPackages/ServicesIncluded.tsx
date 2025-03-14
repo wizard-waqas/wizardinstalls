@@ -54,10 +54,10 @@ const PriceItem = () => {
 
     return (
         <div className="mt-6 bg-grey-400 p-4 rounded-lg shadow-md text-white w-full">
-            <h4 className="text-2xl font-bold mb-2 text-green-200">Pricing</h4>
+            <h4 id={"pricing"} className="text-2xl font-bold mb-2 text-green-200">Installation Quote</h4>
 
             <div className="flex justify-between items-center">
-                <span className="text-lg">Dashcam Included</span>
+                <span className="text-lg">Include dashcam in final price</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                     <input
                         type="checkbox"

@@ -14,7 +14,7 @@ export default function ClientsPage() {
 
     const fetchClients = async () => {
         try {
-            const collectionName = process.env.ENVIRONMENT === "production" ? "interested-clients" : "test-clients";
+            const collectionName = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "interested-clients" : "test-clients";
             const querySnapshot = await getDocs(collection(db, collectionName));
             const clientsList = querySnapshot.docs.map(doc => ({
                 ...(doc.data() as ClientInfo)
@@ -43,7 +43,7 @@ export default function ClientsPage() {
 
         const toastId = toast.loading(`Updating client: ${clientName}`);
         try {
-            const collectionName = process.env.ENVIRONMENT === "production" ? "interested-clients" : "test-clients";
+            const collectionName = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "interested-clients" : "test-clients";
             await updateDoc(doc(db, collectionName, clientId), {
                 contactedClient: !currentContactedState
             });

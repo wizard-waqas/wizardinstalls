@@ -77,7 +77,7 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
         >
             <div className={"flex flex-col items-center space-y-2"}>
                 <span>Order now on</span>
-                <img alt={"amazon logo"} className={"w-16  h-6"} src={"/dashcam-packages/whiteamazonlogo.png"}/>
+                <img alt={"Amazon"} className={"w-16 h-6"} src={"/dashcam-packages/whiteamazonlogo.png"}/>
             </div>
 
         </a>
@@ -86,9 +86,9 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
 
 const ContactUsButton = () => {
     return (
-        <a href={"#information-form"}
-           className={"flex items-center justify-center w-full bg-red-500 text-white px-4 py-2 rounded-lg"}>
-            <span>Contact us</span>
+        <a href={"#pricing"}
+           className={"flex items-center justify-center w-full bg-green-200 text-green-600 px-4 py-2 rounded-lg"}>
+            <span>See pricing</span>
         </a>
     )
 }
