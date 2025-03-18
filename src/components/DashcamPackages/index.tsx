@@ -2,7 +2,6 @@
 
 import DashCamPackages from "@/components/DashcamPackages/DashCamPackages";
 import ServicesIncluded from "@/components/DashcamPackages/ServicesIncluded";
-import YouShouldKnow from "@/components/DashcamPackages/YouShouldKnow";
 
 export default function DashcamPackages() {
 
@@ -14,7 +13,6 @@ export default function DashcamPackages() {
 
             <DashCamPackages/>
             <ServicesIncluded/>
-            <YouShouldKnow/>
         </section>
     );
 }

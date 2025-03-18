@@ -24,12 +24,14 @@ export default function DashCamPackages() {
                 <SelectServiceButton
                     selectedService={selectedService}
                     handleServiceChange={handleServiceChange}
-                    service={"front"}
+                    serviceText={"Front"}
+                    serviceType={"front"}
                 />
                 <SelectServiceButton
                     selectedService={selectedService}
                     handleServiceChange={handleServiceChange}
-                    service={"front + rear"}
+                    serviceText={"Front + Rear"}
+                    serviceType={"frontRear"}
                 />
             </div>
 
@@ -63,7 +65,7 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
         if (selectedService === "front") {
             return "https://amzn.to/40Lu4Fm";
         }
-        if (selectedService === "front + rear") {
+        if (selectedService === "frontRear") {
             return "https://amzn.to/4hqrpGl";
         }
     }

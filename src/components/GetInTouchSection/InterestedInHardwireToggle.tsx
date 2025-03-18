@@ -18,12 +18,12 @@ export default function InterestedInHardwireToggle({formData, setFormData}: Inte
                 type="button"
                 onClick={handleToggle}
                 className={`w-12 h-6 rounded-full p-1 relative transition-colors ${
-                    formData.recordingInterest ? 'bg-red-500' : 'bg-gray-700'
+                    formData.recordingInterest ? 'bg-green-500' : 'bg-gray-700'
                 }`}
             >
-                <div
+                <div // This is the circle in the radio button that moves
                     className={`w-4 h-4 bg-white rounded-full absolute top-1 transition-transform ${
-                        formData.recordingInterest ? 'translate-x-6' : 'translate-x-0'
+                        formData.recordingInterest ? 'translate-x-5' : 'translate-x-0'
                     }`}
                 />
             </button>

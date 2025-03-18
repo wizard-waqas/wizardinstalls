@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image";
 import {IoIosArrowDown} from "react-icons/io";
+import {prices} from "@/utils";
 
 export default function SplashSection() {
 
@@ -31,7 +32,7 @@ export default function SplashSection() {
 
                 <a className={"flex flex-col items-center"} href="#dashcam-packages">
                     <span className={" border-2 px-4 py-4 rounded-xl mt-12 text-xl"}>
-                        Installations starting at $70
+                        Installations starting at ${prices["front"].service}
                     </span>
                     <IoIosArrowDown className={"mt-2 animate-bounceFade"} size={32}/>
                 </a>

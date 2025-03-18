@@ -1,22 +1,22 @@
 import React from "react"
-import {capitalize} from "@/utils";
 
 interface SelectServiceButtonProps {
     selectedService: string;
     handleServiceChange: (service: string) => void;
-    service: string;
+    serviceText: string;
+    serviceType: string;
 }
-export default function SelectServiceButton({selectedService, handleServiceChange, service}: SelectServiceButtonProps) {
+export default function SelectServiceButton({selectedService, handleServiceChange, serviceText, serviceType}: SelectServiceButtonProps) {
     return (
         <button
-            onClick={() => handleServiceChange(service)}
+            onClick={() => handleServiceChange(serviceType)}
             className={`w-full flex justify-center items-center space-x-2 px-2 py-2 m-1 rounded-md transition-all ${
-                selectedService === service
-                    ? "text-gray-200 bg-grey-800"
+                selectedService === serviceType
+                    ? "text-gray-800 bg-red-300"
                     : "text-gray-300"
             }`}
         >
-            <span>{capitalize(service)}</span>
+            <span>{serviceText}</span>
         </button>
     )
 }
