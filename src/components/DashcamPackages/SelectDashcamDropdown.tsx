@@ -15,18 +15,18 @@ export default function SelectDashcamDropdown({selectedService, handleServiceCha
     const bgClass = useDarkBg ? "bg-grey-800" : "bg-grey-400";
 
     return (
-        <div className={`flex items-center justify-between w-full overflow-hidden mb-4 ${bgClass} rounded-lg`}>
+        <div className={`flex items-center justify-between w-full overflow-hidden mb-4 ${bgClass} rounded-full`}>
             <div className={`flex w-fit text-nowrap mr-4 p-4`}>
                 <BiSolidCameraHome className={"text-2xl text-gray-300 rotate-180 mr-2"}/>
                 Dashcam Option
             </div>
 
-            <IoMdArrowRoundForward className={"text-5xl text-gray-300"}/>
+            {/*<IoMdArrowRoundForward className={"text-5xl text-gray-300"}/>*/}
 
             <div className={"w-full "}>
                 <Menu>
                     <MenuButton
-                        className={"w-full p-4 rounded-lg flex justify-end text-right"}>
+                        className={"w-full p-4 rounded-lg flex justify-end text-right text-nowrap"}>
                         <div>{getServiceText(selectedService)}</div>
                         <IoIosArrowDown className={"text-2xl ml-2 text-red-500"}/>
                     </MenuButton>
