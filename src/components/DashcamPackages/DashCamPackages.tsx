@@ -1,18 +1,31 @@
 import React from "react"
 import Image from "next/image";
 import ServiceDescription from "@/components/DashcamPackages/ServiceDescription";
-import SelectServiceButton from "@/components/DashcamPackages/SelectServiceButton";
 import {useAtom} from "jotai";
 import {selectedServiceAtom} from "@/atoms/selectedServiceAtom";
+import SelectDashcamDropdown from "@/components/DashcamPackages/SelectDashcamDropdown";
 
 export default function DashCamPackages() {
     const [selectedService, setSelectedService] = useAtom(selectedServiceAtom);
 
-    const imageSrc =
-        selectedService === "front" ? "/dashcam-packages/front-dashcam.jpg" : "/dashcam-packages/front-and-rear-dashcam.png";
     const imageAlt = selectedService === "front"
         ? "Thinkware F70 Pro Front Dashcam"
         : "RedTiger F7N Pro Front and Rear Dashcam";
+
+    const getImageAlt = (serviceType: string) => {
+        switch (serviceType) {
+            case "front":
+                return "Thinkware F70 Pro Front Dashcam";
+            case "frontRear":
+                return "RedTiger F7N Pro Front and Rear Dashcam";
+            case "frontInterior":
+                return "Vantrue N2X Front and Interior Dashcam";
+            case "rearviewMirror":
+                return "Wolfbox G840S Rearview Mirror Dashcam";
+            default:
+                return "Thinkware F70 Pro Front Dashcam";
+        }
+    }
 
     const handleServiceChange = (service: string) => {
         setSelectedService(service);
@@ -20,27 +33,16 @@ export default function DashCamPackages() {
 
     return (
         <div className={"flex flex-col items-center mt-6"}>
-            <div className="flex justify-center w-11/12 lg:w-1/3 rounded-lg overflow-hidden bg-grey-400 ">
-                <SelectServiceButton
-                    selectedService={selectedService}
-                    handleServiceChange={handleServiceChange}
-                    serviceText={"Front"}
-                    serviceType={"front"}
-                />
-                <SelectServiceButton
-                    selectedService={selectedService}
-                    handleServiceChange={handleServiceChange}
-                    serviceText={"Front + Rear"}
-                    serviceType={"frontRear"}
-                />
+            <div className={"flex justify-center w-11/12 lg:w-1/3"}>
+                <SelectDashcamDropdown selectedService={selectedService} handleServiceChange={handleServiceChange}/>
             </div>
 
             <ServiceDescription selectedService={selectedService}/>
 
             <div className="relative rounded-lg overflow-hidden w-[375px] h-[350px] ">
                 <Image
-                    src={imageSrc}
-                    alt={imageAlt}
+                    src={`/dashcam-packages/${selectedService}.png`}
+                    alt={getImageAlt(selectedService)}
                     fill
                     className="object-cover"
                 />
@@ -67,6 +69,12 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
         }
         if (selectedService === "frontRear") {
             return "https://amzn.to/4hqrpGl";
+        }
+        if (selectedService === "frontInterior") {
+            return "https://amzn.to/4iIMuwC";
+        }
+        if (selectedService === "rearviewMirror") {
+            return "https://amzn.to/425lhxx";
         }
     }
 

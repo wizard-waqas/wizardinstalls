@@ -2,10 +2,8 @@ import React, {useState} from "react"
 import {useAtom} from "jotai/index";
 import {selectedServiceAtom} from "@/atoms/selectedServiceAtom";
 import GreyDivider from "@/components/GreyDivider";
-import SelectServiceButton from "@/components/DashcamPackages/SelectServiceButton";
 import {prices} from "@/utils";
-// import {CloseButton, Popover, PopoverButton, PopoverPanel} from "@headlessui/react";
-// import {IoClose} from "react-icons/io5";
+import SelectDashcamDropdown from "@/components/DashcamPackages/SelectDashcamDropdown";
 
 
 export default function InstallationQuote() {
@@ -27,20 +25,7 @@ export default function InstallationQuote() {
         <div className="mt-6 bg-grey-400 p-4 rounded-lg shadow-md text-white w-full">
             <h4 id={"pricing"} className="text-2xl font-bold mb-2 text-green-200">Installation Quote</h4>
 
-            <div className="flex justify-center w-full mb-4 rounded-lg overflow-hidden bg-grey-800">
-                <SelectServiceButton
-                    selectedService={selectedService}
-                    handleServiceChange={handleServiceChange}
-                    serviceText={"Front"}
-                    serviceType={"front"}
-                />
-                <SelectServiceButton
-                    selectedService={selectedService}
-                    handleServiceChange={handleServiceChange}
-                    serviceText={"Front + Rear"}
-                    serviceType={"frontRear"}
-                />
-            </div>
+            <SelectDashcamDropdown selectedService={selectedService} handleServiceChange={handleServiceChange} useDarkBg={true}/>
 
             <div className="flex justify-between items-center mb-2">
                 <span className="text-lg">Include dashcam in quote</span>

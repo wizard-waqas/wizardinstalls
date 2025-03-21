@@ -27,4 +27,30 @@ export const prices: Pricing = {
         dashcam: 130,
         full: 250
     },
+    frontInterior: {
+        service: 100,
+        dashcam: 200,
+        full: 300
+    },
+    rearviewMirror: {
+        service: 120,
+        dashcam: 120,
+        full: 240
+    }
 };
+
+export const getServiceText = (serviceType: string) => {
+    switch (serviceType) {
+        case "front":
+            return "Front";
+        case "frontRear":
+            return "Front + Rear";
+        case "frontInterior":
+            return "Front + Interior";
+        case "rearviewMirror":
+            return "Rearview Mirror";
+        default:
+            return "Front";
+    }
+};
+
