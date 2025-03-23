@@ -21,8 +21,6 @@ export default function SelectDashcamDropdown({selectedService, handleServiceCha
                 Dashcam
             </div>
 
-            {/*<IoMdArrowRoundForward className={"text-5xl text-gray-300"}/>*/}
-
             <div className={"w-full "}>
                 <Menu>
                     <MenuButton
