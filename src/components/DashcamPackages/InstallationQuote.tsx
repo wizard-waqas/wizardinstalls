@@ -23,7 +23,7 @@ export default function InstallationQuote() {
 
     return (
         <div className="mt-6 bg-grey-400 p-4 rounded-lg shadow-md text-white w-full">
-            <h4 id={"pricing"} className="text-2xl font-bold mb-2 text-green-200">Installation Quote</h4>
+            <h4 className="text-2xl font-bold mb-2 text-green-200">Installation Quote</h4>
 
             <SelectDashcamDropdown selectedService={selectedService} handleServiceChange={handleServiceChange} useDarkBg={true}/>
 
