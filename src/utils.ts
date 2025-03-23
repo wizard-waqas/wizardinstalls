@@ -18,19 +18,19 @@ type Pricing = {
 
 export const prices: Pricing = {
     front: {
-        service: 80,
-        dashcam: 70,
-        full: 150
+        service: 90,
+        dashcam: 80,
+        full: 170
     },
     frontRear: {
-        service: 120,
+        service: 140,
         dashcam: 130,
-        full: 250
+        full: 270
     },
     frontInterior: {
-        service: 100,
+        service: 120,
         dashcam: 200,
-        full: 300
+        full: 320
     },
     rearviewMirror: {
         service: 120,
@@ -44,11 +44,13 @@ export const getServiceText = (serviceType: string) => {
         case "front":
             return "Front";
         case "frontRear":
-            return "Front + Rear";
+            return "Front & Rear";
         case "frontInterior":
-            return "Front + Interior";
+            return "Front & Interior";
+        case "frontInteriorRear":
+            return "Front, Interior, & Rear";
         case "rearviewMirror":
-            return "Rearview Mirror";
+            return "Rearview Mirror & Rear";
         default:
             return "Front";
     }
