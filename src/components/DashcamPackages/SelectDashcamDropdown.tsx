@@ -18,7 +18,7 @@ export default function SelectDashcamDropdown({selectedService, handleServiceCha
         <div className={`flex items-center justify-between w-full overflow-hidden mb-4 ${bgClass} rounded-full`}>
             <div className={`flex w-fit text-nowrap mr-4 p-4`}>
                 <BiSolidCameraHome className={"text-2xl text-gray-300 rotate-180 mr-2"}/>
-                Dashcam Option
+                Dashcam
             </div>
 
             {/*<IoMdArrowRoundForward className={"text-5xl text-gray-300"}/>*/}
