@@ -9,7 +9,7 @@ export default function CarInfoInput({formData, setFormData}: CarInfoInputProps)
     return (
         <div className="mb-6">
             <label className="block mb-2">
-                Year, Make & Model (optional)
+                Year, Make & Model
             </label>
             <input
                 type="text"

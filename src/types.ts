@@ -3,8 +3,11 @@ export interface ClientInfo {
     fullName: string;
     contactInfo: string;
     vehicleInfo: string;
-    recordingInterest: boolean;
+    hardwireInterest: boolean;
     submitDate?: string;
     timestamp?: string;
     contactedClient?: boolean;
+    zipCode?: string;
+    hasDashcam?: string;
+    dashcamDetail?: string;
 }

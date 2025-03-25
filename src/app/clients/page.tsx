@@ -101,27 +101,38 @@ export default function ClientsPage() {
     );
 }
 
-const ClientCard = ({client, handleCheckboxChange}: { client: ClientInfo, handleCheckboxChange: any }) => {
+const ClientCard = ({ client, handleCheckboxChange }: { client: ClientInfo, handleCheckboxChange: any }) => {
     return (
         <li key={client.fullName} className="border-b border-gray-600 py-2 space-y-1">
             <div className={"flex justify-between"}>
                 <p className="font-semibold">{client.fullName}</p>
                 <p className="font-bold text-red-500">{formatContactInfo(client.contactInfo)}</p>
             </div>
-            <p className=" font-bold">{client.vehicleInfo}</p>
+            <p className="font-bold">{client.vehicleInfo}</p>
             <p>{client.submitDate}</p>
+
+            {/* New fields */}
+            {client.hasDashcam && (
+                <p className="text-sm text-gray-400">Has Dashcam: {client.hasDashcam === "own" ? `Yes (${client.dashcamDetail || "No details provided"})` : "No, will purchase one"}</p>
+            )}
+
+            {client.zipCode && (
+                <p className="text-sm text-gray-400">Zip Code: {client.zipCode}</p>
+            )}
+
             <div className={"flex justify-between"}>
-                <p className="text-sm text-gray-400">{client.recordingInterest ? "Interested in hardwire kit" : "Not interested in hardwire kit"}</p>
+                <p className="text-sm text-gray-400">{client.hardwireInterest ? "Interested in hardwire kit" : "Not interested in hardwire kit"}</p>
                 <div className={"flex space-x-2 items-center"}>
                     <label htmlFor={client.id}>Contacted?</label>
                     <input id={client.id} type="checkbox" checked={client.contactedClient}
-                           className={"w-4  h-4 text-red-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"}
-                           onChange={() => handleCheckboxChange(client.id, client.fullName, client.contactedClient)}/>
+                           className={"w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"}
+                           onChange={() => handleCheckboxChange(client.id, client.fullName, client.contactedClient)} />
                 </div>
             </div>
         </li>
-    )
+    );
 }
+
 
 const formatContactInfo = (contactInfo: string) => {
     // if the contactInfo begins with a number then format it at a phone number in this format xxx-xxx-xxxx

@@ -1,19 +1,19 @@
 import React, {useState} from 'react';
 import ContactInput from "@/components/GetInTouchSection/ContactInput";
-import InterestedInHardwireToggle from "@/components/GetInTouchSection/InterestedInHardwireToggle";
 import CarInfoInput from "@/components/GetInTouchSection/CarInfoInput";
 import FullNameInput from "@/components/GetInTouchSection/FullNameInput";
 import {collection, doc, setDoc} from "@firebase/firestore";
 import {db} from "@/firebase";
 import toast from "react-hot-toast";
 import SubmitButton from "@/components/GetInTouchSection/SubmitButton";
+import MoreDetailsDropdown from "@/components/GetInTouchSection/MoreDetailsDropdown";
 
 const GetInTouchSection = () => {
     const [formData, setFormData] = useState({
         fullName: '',
         contactInfo: '',
         vehicleInfo: '',
-        recordingInterest: false // Toggle state
+        hardwireInterest: false // Toggle state
     });
 
     const handleSubmit = async () => {
@@ -72,9 +72,10 @@ const GetInTouchSection = () => {
                 <FullNameInput formData={formData} setFormData={setFormData}/>
                 <ContactInput formData={formData} setFormData={setFormData}/>
                 <CarInfoInput formData={formData} setFormData={setFormData}/>
-                <InterestedInHardwireToggle formData={formData} setFormData={setFormData}/>
-                <SubmitButton handleSubmit={handleSubmit}/>
 
+                <MoreDetailsDropdown formData={formData} setFormData={setFormData}/>
+
+                <SubmitButton handleSubmit={handleSubmit}/>
             </div>
         </section>
     );
