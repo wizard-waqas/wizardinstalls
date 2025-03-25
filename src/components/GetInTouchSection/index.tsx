@@ -7,6 +7,7 @@ import {db} from "@/firebase";
 import toast from "react-hot-toast";
 import SubmitButton from "@/components/GetInTouchSection/SubmitButton";
 import MoreDetailsDropdown from "@/components/GetInTouchSection/MoreDetailsDropdown";
+import GreyDivider from "@/components/GreyDivider";
 
 const GetInTouchSection = () => {
     const [formData, setFormData] = useState({
@@ -56,7 +57,7 @@ const GetInTouchSection = () => {
 
 
     return (
-        <section className="flex flex-col items-center bg-black text-white mt-8 pb-16 text-center" id="information-form">
+        <section className="flex flex-col items-center bg-black text-white mt-8 text-center" id="information-form">
             <h3 className="text-3xl font-bold mb-4 text-red-500">
                 Interested? Let's talk.
             </h3>
@@ -72,10 +73,10 @@ const GetInTouchSection = () => {
                 <FullNameInput formData={formData} setFormData={setFormData}/>
                 <ContactInput formData={formData} setFormData={setFormData}/>
                 <CarInfoInput formData={formData} setFormData={setFormData}/>
-
                 <MoreDetailsDropdown formData={formData} setFormData={setFormData}/>
-
                 <SubmitButton handleSubmit={handleSubmit}/>
+
+                <GreyDivider/>
             </div>
         </section>
     );

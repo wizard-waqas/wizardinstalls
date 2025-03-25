@@ -3,7 +3,7 @@ import FAQItem from "@/components/FAQSection/FAQItem";
 
 export default function FAQSection() {
     return (
-        <section id="faq-section" className="py-8 bg-grey-800">
+        <section id="faq-section" className="pb-8 bg-grey-800">
             <h3 className="text-center text-red-500 font-bold text-2xl">
                 FAQ
             </h3>

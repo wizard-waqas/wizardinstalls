@@ -100,6 +100,8 @@ export default function InstallationQuote() {
                 <span>Quoted Price:</span>
                 <span>${calculatePrice(selectedService, includeDashcam, includeHardwire)}</span>
             </div>
+
+            <a href={'#information-form'} className={"block w-full mt-2 rounded-lg py-2 bg-red-500"}>Get Your Quote Finalized</a>
         </div>
     )
 }

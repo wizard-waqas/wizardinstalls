@@ -3,7 +3,10 @@
 import React, {useState, useEffect} from 'react';
 import {RxReset} from "react-icons/rx";
 
-export default function SubmitButton({handleSubmit}: any) {
+interface SubmitButtonProps {
+    handleSubmit: (e: any) => Promise<boolean>;
+}
+export default function SubmitButton({handleSubmit}: SubmitButtonProps) {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {
