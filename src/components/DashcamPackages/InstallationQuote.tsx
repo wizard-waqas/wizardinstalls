@@ -13,11 +13,11 @@ export default function InstallationQuote() {
     const [selectedService, setSelectedService] = useAtom(selectedServiceAtom);
     const [includeDashcam, setIncludeDashcam] = useState(true);
     const [includeHardwire, setIncludeHardwire] = useState(false);
-    const [inServiceArea, setInServiceArea] = useState(true);
+    const [includeTravelCharge, setIncludeTravelCharge] = useState(true);
 
-    const calculatePrice = (serviceType: string, includeDashcam: boolean, includeHardwire: boolean, inServiceArea: boolean) => {
+    const calculatePrice = (serviceType: string, includeDashcam: boolean, includeHardwire: boolean, includeTravelCharge: boolean) => {
         let basePrice = includeDashcam ? prices[serviceType].full : prices[serviceType].service;
-        if (!inServiceArea) {
+        if (!includeTravelCharge) {
             basePrice += 20;
         }
         return includeHardwire ? basePrice + 100 : basePrice;
@@ -97,7 +97,7 @@ export default function InstallationQuote() {
                             </p>
                         </PopoverPanel>
                     </Popover>
-                    <ZipCodeButtonInput inServiceArea={inServiceArea} setInServiceArea={setInServiceArea}/>
+                    <ZipCodeButtonInput includeTravelCharge={includeTravelCharge} setIncludeTravelCharge={setIncludeTravelCharge}/>
                 </div>
             </div>
 
@@ -105,7 +105,7 @@ export default function InstallationQuote() {
 
             <div className="flex justify-between text-lg">
                 <span>Quoted Price:</span>
-                <span>${calculatePrice(selectedService, includeDashcam, includeHardwire, inServiceArea)}</span>
+                <span>${calculatePrice(selectedService, includeDashcam, includeHardwire, includeTravelCharge)}</span>
             </div>
 
             <a href={'#information-form'} className={"block w-full mt-2 rounded-lg py-2 bg-red-500"}>Get Your Quote Finalized</a>

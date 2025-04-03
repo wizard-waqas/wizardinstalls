@@ -7,11 +7,11 @@ const serviceAreaCities = [
 ];
 
 interface ZipCodeButtonInputProps {
-    inServiceArea: boolean;
-    setInServiceArea: React.Dispatch<React.SetStateAction<boolean>>;
+    includeTravelCharge: boolean;
+    setIncludeTravelCharge: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: ZipCodeButtonInputProps) {
+export default function ZipCodeButtonInput({ includeTravelCharge, setIncludeTravelCharge }: ZipCodeButtonInputProps) {
     const [zipCode, setZipCode] = useState("");
     const [isButtonVisible, setButtonVisible] = useState(true);
     const [isInputVisible, setInputVisible] = useState(false);
@@ -34,13 +34,13 @@ export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: 
                     if (data.places) {
                         const city = data.places[0]["place name"].toLowerCase();
                         if (serviceAreaCities.includes(city)) {
-                            setInServiceArea(true);
+                            setIncludeTravelCharge(true);
                             setIsInvalidZip(false);
                             setInputVisible(false);
                             setButtonVisible(false);
                             toast.success("ZIP code in service area!");
                         } else {
-                            setInServiceArea(false);
+                            setIncludeTravelCharge(false);
                             setIsInvalidZip(false);
                             setInputVisible(false);
                             setButtonVisible(false);
@@ -48,7 +48,7 @@ export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: 
                         }
                     } else {
                         setIsInvalidZip(true);
-                        setInServiceArea(false);
+                        setIncludeTravelCharge(false);
                         setInputVisible(true);
                         setButtonVisible(false);
                         toast.error("Invalid ZIP code.");
@@ -57,7 +57,7 @@ export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: 
                 .catch(() => {
                     toast.dismiss();
                     setIsInvalidZip(true);
-                    setInServiceArea(false);
+                    setIncludeTravelCharge(false);
                     setInputVisible(true);
                     setButtonVisible(false);
                     toast.error("Error checking ZIP code.");
@@ -116,7 +116,7 @@ export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: 
                         <span>{zipCode}&nbsp;</span>
                         <MdEdit size={16}/>
                     </button>
-                    <span>{inServiceArea ? "Included" : "$20"}</span>
+                    <span>{includeTravelCharge ? "Included" : "$20"}</span>
                 </div>
             )}
         </>
