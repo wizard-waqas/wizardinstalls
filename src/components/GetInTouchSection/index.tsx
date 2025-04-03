@@ -65,8 +65,7 @@ const GetInTouchSection = () => {
             <p className="text-gray-400 mb-4 text-wrap w-11/12 lg:w-1/3">
                 Ready to get a dashcam installed?&nbsp;
                 Message us at <a href="tel:347-433-5693" className="text-red-300">(347)-433-5693</a> or provide your
-                details below.&nbsp;
-                We’re here to help!
+                details below. We’re here to help! (This information will not be sold or shared.)
             </p>
 
             <div className="text-left w-11/12 lg:w-1/3 ">
