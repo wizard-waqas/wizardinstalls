@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
-import { IoLocationSharp } from "react-icons/io5";
+import { MdEdit } from "react-icons/md";
 
 const serviceAreaCities = [
     "jersey city", "woodbridge", "edison", "fords", "metuchen", "perth amboy", "avenel", "rahway"
@@ -13,17 +13,19 @@ interface ZipCodeButtonInputProps {
 
 export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: ZipCodeButtonInputProps) {
     const [zipCode, setZipCode] = useState("");
-    const [isButtonVisible, setButtonVisible] = useState(true);  // Controls button visibility
-    const [isInputVisible, setInputVisible] = useState(false);  // Controls input visibility
+    const [isButtonVisible, setButtonVisible] = useState(true);
+    const [isInputVisible, setInputVisible] = useState(false);
     const [isInvalidZip, setIsInvalidZip] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+        const value = e.target.value.replace(/\D/g, "");
         if (value.length <= 5) {
             setZipCode(value);
         }
 
         if (value.length === 5) {
+            setLoading(true);  // Set loading to true when starting the fetch
             // toast.loading("Checking service area...");
             fetch(`https://api.zippopotam.us/us/${value}`)
                 .then(response => response.json())
@@ -59,6 +61,9 @@ export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: 
                     setInputVisible(true);
                     setButtonVisible(false);
                     toast.error("Error checking ZIP code.");
+                })
+                .finally(() => {
+                    setLoading(false);  // Set loading to false when done
                 });
         }
     };
@@ -71,7 +76,14 @@ export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: 
 
     return (
         <>
-            {isButtonVisible && (
+            {loading && (
+                <div className="flex items-center space-x-2">
+                    <span className="text-gray-300">Checking...</span>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-300"></div>
+                </div>
+                )}
+
+            {isButtonVisible && !loading && (
                 <button
                     onClick={() => {
                         setButtonVisible(false); // Hide the button when clicked
@@ -83,7 +95,7 @@ export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: 
                 </button>
             )}
 
-            {isInputVisible && (
+            {isInputVisible && !loading && (
                 <input
                     type="text"
                     value={zipCode}
@@ -95,13 +107,14 @@ export default function ZipCodeButtonInput({ inServiceArea, setInServiceArea }: 
                 />
             )}
 
-            {zipCode.length === 5 && !isInvalidZip && (
+            {zipCode.length === 5 && !isInvalidZip && !loading && (
                 <div className="mt-2 text-gray-300 flex items-center space-x-2">
                     <button
                         onClick={handleBackToInput}
-                        className="text-gray-300 hover:text-white bg-grey-800 p-0.5 rounded-md"
+                        className="flex items-center border-dotted border-b-2 text-sm text-gray-300 italic hover:text-white px-1"
                     >
-                        <IoLocationSharp size={20}/>
+                        <span>{zipCode}&nbsp;</span>
+                        <MdEdit size={16}/>
                     </button>
                     <span>{inServiceArea ? "Included" : "$20"}</span>
                 </div>
