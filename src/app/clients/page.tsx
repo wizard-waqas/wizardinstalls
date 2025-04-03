@@ -82,17 +82,50 @@ export default function ClientsPage() {
         )
     }
 
+    const uncontactedClients = clients.filter(client => !client.contactedClient);
+    const contactedClients = clients.filter(client => client.contactedClient);
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white px-4">
             <h1 className="text-2xl font-bold mb-4">Client List</h1>
 
             <div className="w-full max-w-lg bg-gray-800 p-4 rounded-lg">
                 {clients.length > 0 ? (
-                    <ul className="space-y-2">
-                        {clients.map((client: ClientInfo) => (
-                            <ClientCard key={client.id} client={client} handleCheckboxChange={handleCheckboxChange}/>
-                        ))}
-                    </ul>
+                    <>
+                        {uncontactedClients.length > 0 && (
+                            <>
+                                <h2 className="text-xl font-semibold mb-2 text-red-400">Uncontacted</h2>
+                                <ul className="space-y-2">
+                                    {uncontactedClients.map(client => (
+                                        <ClientCard
+                                            key={client.id}
+                                            client={client}
+                                            handleCheckboxChange={handleCheckboxChange}
+                                        />
+                                    ))}
+                                </ul>
+                            </>
+                        )}
+
+                        {contactedClients.length > 0 && (
+                            <div className="mt-4">
+                                <details className="bg-gray-700 p-2 rounded-lg">
+                                    <summary className="cursor-pointer text-white px-2 py-1 rounded">
+                                        View Contacted Clients
+                                    </summary>
+                                    <ul className="space-y-2 mt-2">
+                                        {contactedClients.map(client => (
+                                            <ClientCard
+                                                key={client.id}
+                                                client={client}
+                                                handleCheckboxChange={handleCheckboxChange}
+                                            />
+                                        ))}
+                                    </ul>
+                                </details>
+                            </div>
+                        )}
+                    </>
                 ) : (
                     <p>No clients found.</p>
                 )}

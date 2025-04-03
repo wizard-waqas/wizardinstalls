@@ -46,7 +46,7 @@ export default function DashCamPackages() {
 
             <div className={"flex mt-4 mx-4 space-x-4 w-11/12 lg:w-1/3"}>
                 <BuyOnAmazonButton selectedService={selectedService}/>
-                <ContactUsButton/>
+                <SeePricingButton/>
             </div>
 
         </div>
@@ -90,7 +90,7 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
     )
 }
 
-const ContactUsButton = () => {
+const SeePricingButton = () => {
     return (
         <a href={"#pricing"}
            className={"flex items-center justify-center w-full bg-green-200 text-green-600 px-4 py-2 rounded-lg"}>
