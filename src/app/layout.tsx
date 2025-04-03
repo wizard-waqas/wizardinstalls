@@ -3,7 +3,7 @@ import "./globals.css";
 import Head from "next/head";
 import {Toaster} from "react-hot-toast";
 import {rubik} from "@/fonts";
-import { Analytics } from "@vercel/analytics/react"
+import {Analytics} from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
     title: "Wizard Dashcam Installs",
@@ -59,7 +59,9 @@ export default function RootLayout({
         <html lang="en">
         <Head>
             <meta name="theme-color" content="#000000"/>
-
+            <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5404021000350083"
+                    crossOrigin="anonymous"></script>
 
         </Head>
 
