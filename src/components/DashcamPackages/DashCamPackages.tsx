@@ -2,15 +2,11 @@ import React from "react"
 import Image from "next/image";
 import ServiceDescription from "@/components/DashcamPackages/ServiceDescription";
 import {useAtom} from "jotai";
-import {selectedServiceAtom} from "@/atoms/selectedServiceAtom";
+import {selectedServiceAtom} from "@/atoms/dashcamFormAtoms";
 import SelectDashcamDropdown from "@/components/DashcamPackages/SelectDashcamDropdown";
 
 export default function DashCamPackages() {
     const [selectedService, setSelectedService] = useAtom(selectedServiceAtom);
-
-    const imageAlt = selectedService === "front"
-        ? "Thinkware F70 Pro Front Dashcam"
-        : "RedTiger F7N Pro Front and Rear Dashcam";
 
     const getImageAlt = (serviceType: string) => {
         switch (serviceType) {
