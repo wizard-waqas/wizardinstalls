@@ -7,6 +7,7 @@ import SelectDashcamDropdown from "@/components/DashcamPackages/SelectDashcamDro
 import {CloseButton, Popover, PopoverButton, PopoverPanel} from "@headlessui/react";
 import {IoClose} from "react-icons/io5";
 import ZipCodeButtonInput from "@/components/DashcamPackages/ZipCodeButtonInput";
+import GetYourQuoteFinalizedButton from "@/components/DashcamPackages/GetYourQuoteFinalizedButton";
 
 
 export default function InstallationQuote() {
@@ -108,7 +109,7 @@ export default function InstallationQuote() {
                 <span>${calculatePrice(selectedService, includeDashcam, includeHardwire, includeTravelCharge)}</span>
             </div>
 
-            <a href={'#information-form'} className={"block w-full mt-2 rounded-lg py-2 bg-red-500"}>Get Your Quote Finalized</a>
+            <GetYourQuoteFinalizedButton/>
         </div>
     )
 }
