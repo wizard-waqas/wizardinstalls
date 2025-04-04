@@ -83,11 +83,12 @@ export default function ZipCodeButtonInput({ includeTravelCharge, setIncludeTrav
                 </div>
                 )}
 
+            {/* Zipcode entry button */}
             {isButtonVisible && !loading && (
                 <button
                     onClick={() => {
-                        setButtonVisible(false); // Hide the button when clicked
-                        setInputVisible(true);  // Show the input box
+                        setButtonVisible(false);
+                        setInputVisible(true);
                     }}
                     className={"text-sm bg-grey-800 text-gray-300 rounded-full px-4 py-1"}
                 >
@@ -95,6 +96,7 @@ export default function ZipCodeButtonInput({ includeTravelCharge, setIncludeTrav
                 </button>
             )}
 
+            {/* zipcode input box*/}
             {isInputVisible && !loading && (
                 <input
                     type="text"
@@ -107,6 +109,7 @@ export default function ZipCodeButtonInput({ includeTravelCharge, setIncludeTrav
                 />
             )}
 
+            {/*Edit zip code button*/}
             {zipCode.length === 5 && !isInvalidZip && !loading && (
                 <div className="mt-2 text-gray-300 flex items-center space-x-2">
                     <button

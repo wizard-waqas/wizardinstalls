@@ -4,6 +4,7 @@ import ServiceDescription from "@/components/DashcamPackages/ServiceDescription"
 import {useAtom} from "jotai";
 import {selectedServiceAtom} from "@/atoms/dashcamFormAtoms";
 import SelectDashcamDropdown from "@/components/DashcamPackages/SelectDashcamDropdown";
+import GetAQuoteButton from "@/components/DashcamPackages/GetAQuoteButton";
 
 export default function DashCamPackages() {
     const [selectedService, setSelectedService] = useAtom(selectedServiceAtom);
@@ -46,7 +47,7 @@ export default function DashCamPackages() {
 
             <div className={"flex mt-4 mx-4 space-x-4 w-11/12 lg:w-1/3"}>
                 <BuyOnAmazonButton selectedService={selectedService}/>
-                <SeePricingButton/>
+                <GetAQuoteButton/>
             </div>
 
         </div>
@@ -86,15 +87,6 @@ const BuyOnAmazonButton = ({selectedService}: BuyOnAmazonButtonProps) => {
                 <img alt={"Amazon"} className={"w-16 h-6"} src={"/dashcam-packages/whiteamazonlogo.png"}/>
             </div>
 
-        </a>
-    )
-}
-
-const SeePricingButton = () => {
-    return (
-        <a href={"#pricing"}
-           className={"flex items-center justify-center w-full bg-green-200 text-green-600 px-4 py-2 rounded-lg"}>
-            <span>See pricing</span>
         </a>
     )
 }

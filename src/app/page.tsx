@@ -1,19 +1,15 @@
-"use client"; // Required for client-side hooks
+"use client";
 
 import DashcamPackages from "../components/DashcamPackages";
-import AccessoryServices from "@/components/AccessoryServices";
 import SplashSection from "@/components/SplashSection";
 import {useEffect} from "react";
-import {usePathname} from "next/navigation"; // Use next/navigation for App Router
 import {analytics} from "@/firebase";
 import {logEvent} from "@firebase/analytics";
 import GetInTouchSection from "@/components/GetInTouchSection";
 import FAQSection from "@/components/FAQSection";
 import SeeMoreSection from "@/components/SeeMoreSection";
-import GreyDivider from "@/components/GreyDivider";
 
 export default function Home() {
-    const pathname = usePathname(); // Get current path
 
     useEffect(() => {
         if (analytics) {
@@ -27,7 +23,6 @@ export default function Home() {
         <div className="relative min-h-screen w-full">
             <SplashSection/>
             <DashcamPackages/>
-            {/*<AccessoryServices/>*/}
             <FAQSection/>
             <GetInTouchSection/>
             <SeeMoreSection/>
