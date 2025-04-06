@@ -15,7 +15,7 @@ export default function ServicesIncluded() {
                     <GreyDivider/>
                     <ServiceItem icon={"cable"} description={"Hidden wires for a clean & integrated finish"}/>
                     <GreyDivider/>
-                    <ServiceItem icon={"record"} description={"Ensure the dashcam records and saves footage"}/>
+                    <ServiceItem icon={"record"} description={"We teach you how to use the dashcam"}/>
                 </ul>
 
                 <YouShouldKnow/>
