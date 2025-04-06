@@ -25,7 +25,7 @@ export const prices: Pricing = {
     frontRear: {
         service: 140,
         dashcam: 130,
-        full: 270
+        full: 280
     },
     frontInterior: {
         service: 120,
