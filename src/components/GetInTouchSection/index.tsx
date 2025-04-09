@@ -7,9 +7,11 @@ import {db} from "@/firebase";
 import toast from "react-hot-toast";
 import SubmitButton from "@/components/GetInTouchSection/SubmitButton";
 import MoreDetailsDropdown from "@/components/GetInTouchSection/MoreDetailsDropdown";
-import GreyDivider from "@/components/GreyDivider";
 
-const GetInTouchSection = () => {
+interface GetInTouchSectionProps {
+    isCarplay?: boolean;
+}
+const GetInTouchSection = ({isCarplay}: GetInTouchSectionProps) => {
     const [formData, setFormData] = useState({
         fullName: '',
         contactInfo: '',
@@ -43,7 +45,8 @@ const GetInTouchSection = () => {
                 ...formData,
                 id: docId,
                 submitDate: date.toDateString(),
-                contactedClient: false
+                contactedClient: false,
+                isCarplay,
             });
 
             toast.success('Your details have been submitted successfully!', {id: toastId});
@@ -63,7 +66,7 @@ const GetInTouchSection = () => {
             </h3>
 
             <p className="text-gray-400 mb-4 text-wrap w-11/12 lg:w-1/3">
-                Ready to get a dashcam installed?&nbsp;
+                Ready to get a {isCarplay ? "backup camera" : "dashcam"} installed?&nbsp;
                 Message us at <a href="tel:347-433-5693" className="text-red-300">(347)-433-5693</a> or provide your
                 details below. We’re here to help! (This information will not be sold or shared.)
             </p>
@@ -72,10 +75,8 @@ const GetInTouchSection = () => {
                 <FullNameInput formData={formData} setFormData={setFormData}/>
                 <ContactInput formData={formData} setFormData={setFormData}/>
                 <CarInfoInput formData={formData} setFormData={setFormData}/>
-                <MoreDetailsDropdown formData={formData} setFormData={setFormData}/>
+                {!isCarplay && <MoreDetailsDropdown formData={formData} setFormData={setFormData}/>}
                 <SubmitButton handleSubmit={handleSubmit}/>
-
-                <GreyDivider/>
             </div>
         </section>
     );

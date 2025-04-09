@@ -13,7 +13,7 @@ export default function ServicesIncluded() {
                 <ul className="flex flex-col items-center space-y-4 w-full">
                     <ServiceItem icon={"location"} description={"Mobile installation at your location"}/>
                     <ServiceItem icon={"cable"} description={"Hidden wires for a clean & integrated finish"}/>
-                    <ServiceItem icon={"record"} description={"We teach you how to use the dashcam"}/>
+                    <ServiceItem icon={"record"} description={"We teach you how to use the product"}/>
                 </ul>
             </div>
         </div>
