@@ -16,7 +16,7 @@ export default function GetYourQuoteFinalizedButton() {
     };
 
     return (
-        <a href={'#information-form'} className={"block w-full mt-2 rounded-lg py-2 bg-red-500"} onClick={handleClick}>
+        <a href={'#information-form'} className={"block w-full text-center mt-2 rounded-lg py-2 bg-red-500"} onClick={handleClick}>
             Get Your Quote Finalized
         </a>
     );
