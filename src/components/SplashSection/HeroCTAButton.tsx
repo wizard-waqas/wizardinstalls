@@ -35,7 +35,7 @@ export default function HeroCTAButton({type}: HeroCTAButtonProps) {
             case "dashcam":
                 return "#dashcam-packages";
             case "backup":
-                return "#backup-cameras";
+                return "/backup-cameras";
             default:
                 return "#dashcam-packages";
         }
@@ -49,7 +49,7 @@ export default function HeroCTAButton({type}: HeroCTAButtonProps) {
 
     return (
         <a href={getLink()} onClick={handleClick}>
-            <span className={`${type === "dashcam" ? "bg-red-500 text-white" : "text-red-400"} block border-2 w-full border-red-500 p-4 rounded-lg`}>
+            <span className={`${type === "dashcam" ? "bg-red-500 text-white" : "text-red-400"} block border-2 w-full border-red-500 p-4 rounded-full`}>
                 {getText()}
             </span>
         </a>

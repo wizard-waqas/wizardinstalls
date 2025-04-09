@@ -31,7 +31,7 @@ export default function SplashSection() {
                 </h3>
 
                 <div className={"flex flex-col items-center "}>
-                    <div className={"flex flex-col items-center w-full h-full mt-4 space-y-2 lg:space-y-0 lg:flex-row"}>
+                    <div className={"flex flex-col items-center w-full h-full mt-4 space-y-2 lg:space-y-0 lg:space-x-2 lg:flex-row"}>
                         <HeroCTAButton type={"dashcam"}/>
                         <HeroCTAButton type={"backup"}/>
                     </div>
