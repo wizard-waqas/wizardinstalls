@@ -31,7 +31,8 @@ export default {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
                 "grey-400": "#4F4A4F",
-                "grey-800": "#222220"
+                "grey-800": "#222220",
+                "beige": "#EDE8D0"
             },
             fontFamily: {
                 "beiruti": ["Beiruti", "sans-serif"],

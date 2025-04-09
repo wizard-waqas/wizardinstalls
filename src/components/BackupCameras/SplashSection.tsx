@@ -8,7 +8,7 @@ export default function SplashSection() {
         <section className={"py-8 bg-grey-800"}>
             <a className={"flex items-center justify-center"} href="/">
                 <img className={"w-16 mr-4"} src={'/logo.png'} alt={"We install dashcams and backup cameras"}/>
-                <h1 className={"text-2xl font-bold"}>Wizard Dashcam Installs</h1>
+                <h1 className={"text-beige text-2xl font-bold"}>WIZARD DASHCAM INSTALLS</h1>
             </a>
 
             <h3 className="text-center text-red-500 font-bold text-2xl mt-4">
