@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image";
 import {IoIosArrowDown} from "react-icons/io";
 import HeroCTAButton from "@/components/SplashSection/HeroCTAButton";
+import Header from "@/components/Header";
 
 export default function SplashSection() {
 
@@ -17,15 +18,8 @@ export default function SplashSection() {
             />
 
             <div className="flex flex-col items-center text-white pt-8">
-                <div className="mx-8 w-5/6 lg:w-1/3 py-2 flex rounded-lg items-center justify-center">
-                    {/*<h1 className={`text-red-300 text-center text-2xl font-bold lg:text-4xl`}>*/}
-                    {/*    WIZARD DASHCAM INSTALLS*/}
-                    {/*</h1>*/}
-                    <a className={"flex items-center justify-center"} href="/">
-                        <img className={"w-16 mr-4"} src={'/logo.png'} alt={"We install dashcams and backup cameras"}/>
-                        <h1 className={"text-beige text-2xl font-bold"}>WIZARD DASHCAM INSTALLS</h1>
-                    </a>
-                </div>
+                <Header/>
+
                 <h2 className="text-center font-bold text-gray-300 text-4xl mt-8">
                     For when they dash,<br/> you've got the cam.
                 </h2>

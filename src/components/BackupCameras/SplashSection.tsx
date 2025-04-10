@@ -2,14 +2,12 @@ import React from "react"
 import Carousel from "@/components/BackupCameras/Carousel";
 import ServicesIncluded from "@/components/DashcamPackages/ServicesIncluded";
 import BackupCameraPackages from "@/components/BackupCameras/BackupCameraPackages";
+import Header from "@/components/Header";
 
 export default function SplashSection() {
     return (
         <section className={"py-8 bg-grey-800"}>
-            <a className={"flex items-center justify-center"} href="/">
-                <img className={"w-16 mr-4"} src={'/logo.png'} alt={"We install dashcams and backup cameras"}/>
-                <h1 className={"text-beige text-2xl font-bold"}>WIZARD DASHCAM INSTALLS</h1>
-            </a>
+            <Header/>
 
             <h3 className="text-center text-red-500 font-bold text-2xl mt-4">
                 Backup Camera Packages
