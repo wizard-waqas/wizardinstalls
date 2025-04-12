@@ -7,16 +7,16 @@ import {Analytics} from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
     title: "Wizard Dashcam Installs",
-    description: "Offering mobile dashcam installation services in Jersey City, Woodbridge, and surrounding areas in NJ. Record your drive and provide evidence in case of incidents.",
+    description: "Offering mobile dashcam and backup camera installation services in Jersey City, Woodbridge, and other cities in NJ. Record your drive and provide evidence in case of incidents.",
     keywords: [
         "dashcams",
         "dashcam installation",
         "dash cam installation near me",
-        "dashcam installation near me",
         "dashcam install near me",
-        "dashcam for uber drivers",
         "dashcam installation new jersey",
         "professional dashcam installer",
+        "backup camera install",
+        "apple carplay install",
     ],
     icons: {
         icon: "/favicon.ico",

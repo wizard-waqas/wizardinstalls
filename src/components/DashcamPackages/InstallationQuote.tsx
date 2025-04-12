@@ -94,9 +94,8 @@ export default function InstallationQuote() {
                                     <IoClose className={"text-2xl absolute top-2 right-10"}/>
                                 </CloseButton>
                                 <p className={"bg-grey-400 border-2 border-grey-800 mx-8 pt-8 px-4 pb-4 rounded-lg"}>
-                                    Our mobile dashcam installation service is free for Jersey City and&nbsp;
-                                    Woodbridge, NJ residents. For other areas, a travel fee may apply.&nbsp;
-                                    Tap the <i>zipcode</i> button to check the service cost for your location.
+                                    Travel fee is waived for Jersey City and Woodbridge, NJ residents. For other areas,
+                                    a travel fee may apply. Tap the <i>zipcode</i> button to check the service cost for your location.
                                 </p>
                             </PopoverPanel>
                         </Popover>

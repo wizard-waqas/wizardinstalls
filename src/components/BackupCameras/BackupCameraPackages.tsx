@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function BackupCameraPackages() {
     return (
-        <div className="max-w-5xl mx-auto px-4 space-y-8">
+        <div className="flex flex-col items-center w-full mx-auto space-y-8">
 
             {/* Basic Package */}
-            <div className="bg-grey-400 rounded-xl p-6 mt-4 shadow-md border border-white/10">
+            <div className="bg-grey-400 w-11/12 lg:w-1/3 rounded-xl p-6 mt-4 shadow-md border border-white/10">
                 <h3 className="text-xl font-semibold mb-2">Universal Backup Camera Kit with Display</h3>
                 <p className="mb-4">
                     Transform your driving experience with our universal Apple CarPlay/Android Auto compatible
@@ -17,7 +17,7 @@ export default function BackupCameraPackages() {
                 </p>
                 <ul className="list-disc list-inside mb-4">
                     <li>Complete package: HD display + night vision backup camera</li>
-                    <li>Universal compatibility with all vehicles (2000-2024+)</li>
+                    <li>Universal compatibility with all vehicles (2000-2025+)</li>
                     <li>Instant activation when shifting into reverse</li>
                     <li>Professional hidden wiring for clean installation</li>
                     <li>Upgrade-ready for future Apple CarPlay/Android Auto integration</li>
@@ -40,7 +40,7 @@ export default function BackupCameraPackages() {
             </div>
 
             {/* Full Kit Package */}
-            <div className="bg-grey-400 rounded-xl p-6 shadow-md border border-white/10">
+            <div className="bg-grey-400 w-11/12 lg:w-1/3 rounded-xl p-6 shadow-md border border-white/10">
                 <h3 className="text-xl font-semibold mb-2">OEM-Style Touchscreen Replacement with Apple CarPlay &
                     Android Auto</h3>
                 <p className="mb-4">

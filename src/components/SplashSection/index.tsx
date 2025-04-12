@@ -25,7 +25,7 @@ export default function SplashSection() {
                 </h2>
 
                 <h3 className={"text-center mt-4 text-gray-400"}>
-                    📍Mobile dashcam installations servicing <br/>Woodbridge, Jersey City, and surrounding areas.
+                    📍Dashcam & Backup Camera Installation in NJ – Schedule Mobile Service Today!"
                 </h3>
 
                 <div className={"flex flex-col items-center "}>
