@@ -62,7 +62,11 @@ export default function RootLayout({
         </Head>
 
         <body className={`antialiased ${rubik.className}`}>
-        <Toaster/>
+        <Toaster
+            toastOptions={{
+                duration: 5000
+            }}
+        />
         {children}
         <Analytics/>
         </body>
