@@ -24,7 +24,7 @@ export default function Home() {
             <SplashSection/>
             <DashcamPackages/>
             <FAQSection/>
-            <GetInTouchSection/>
+            <GetInTouchSection isCarplay={false}/>
             <SeeMoreSection/>
         </div>
     );

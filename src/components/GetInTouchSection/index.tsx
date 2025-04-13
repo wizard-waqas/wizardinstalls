@@ -46,7 +46,6 @@ const GetInTouchSection = ({isCarplay}: GetInTouchSectionProps) => {
                 id: docId,
                 submitDate: date.toDateString(),
                 contactedClient: false,
-                isCarplay,
             });
 
             toast.success('Your details have been submitted successfully!', {id: toastId});
