@@ -21,7 +21,7 @@ export default function InstallationQuote() {
         if (!includeTravelCharge) {
             basePrice += 20;
         }
-        return includeHardwire ? basePrice + 100 : basePrice;
+        return includeHardwire ? basePrice + 120 : basePrice;
     };
 
     const handleServiceChange = (service: string) => {
@@ -84,7 +84,7 @@ export default function InstallationQuote() {
                     </div>
                     <div className="flex justify-between">
                         <span>24/7 Recording</span>
-                        <span>{includeHardwire ? `$100` : "--"}</span>
+                        <span>{includeHardwire ? `$120` : "--"}</span>
                     </div>
                     <div className="flex items-center justify-between">
                         <Popover className="relative">
