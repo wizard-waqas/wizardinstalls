@@ -8,6 +8,7 @@ import {logEvent} from "@firebase/analytics";
 import GetInTouchSection from "@/components/GetInTouchSection";
 import FAQSection from "@/components/FAQSection";
 import SeeMoreSection from "@/components/SeeMoreSection";
+import CallButton from "@/components/CallButton";
 
 export default function Home() {
 
@@ -26,6 +27,7 @@ export default function Home() {
             <FAQSection/>
             <GetInTouchSection isCarplay={false}/>
             <SeeMoreSection/>
+            <CallButton/>
         </div>
     );
 }
