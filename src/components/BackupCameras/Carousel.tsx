@@ -2,7 +2,7 @@ import {useState} from "react";
 
 const images = [
     "/backup-cameras/carplaykit.jpg",
-    "/backup-cameras/androidauto.png",
+    "/backup-cameras/aftermarketradio.png",
     "/backup-cameras/backupcam.jpg",
 ];
 
