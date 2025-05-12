@@ -23,7 +23,7 @@ const AftermarketRadioPackage = () => {
                 <li>Optional backup camera integration</li>
             </ul>
 
-            <p className="mb-4"><span className="font-bold">Installation Cost:</span> $290<br/><span
+            <p className="mb-4"><span className="font-bold">Installation Cost:</span> $390<br/><span
                 className="font-bold">Product Cost:</span> Varies based on your vehicle and screen preference
             </p>
             <div className="flex gap-4">
@@ -49,7 +49,7 @@ const UniversalPackage = () => {
                 <li>Built-in parking guidelines for easy parking</li>
             </ul>
 
-            <p className="mb-4"><span className="font-bold">Flat Rate:</span> $380 (includes service & kit)</p>
+            <p className="mb-4"><span className="font-bold">Flat Rate:</span> $450 (includes kit & service)</p>
 
             <div className="flex gap-4">
                 <Link href="#information-form">
