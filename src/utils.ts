@@ -23,19 +23,19 @@ export const prices: Pricing = {
         full: 170
     },
     frontRear: {
-        service: 160,
-        dashcam: 120,
-        full: 280
+        service: 190,
+        dashcam: 100,
+        full: 290
     },
     frontInterior: {
         service: 120,
-        dashcam: 200,
-        full: 320
+        dashcam: 220,
+        full: 340
     },
     rearviewMirror: {
-        service: 160,
-        dashcam: 300,
-        full: 480
+        service: 190,
+        dashcam: 290,
+        full: 280
     }
 };
 
