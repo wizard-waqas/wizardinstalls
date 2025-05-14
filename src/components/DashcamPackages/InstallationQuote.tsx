@@ -55,7 +55,7 @@ export default function InstallationQuote() {
                 </div>
 
                 <div className="flex justify-between items-center">
-                    <span className="text-lg">Include 24/7 Recording</span>
+                    <span className="text-lg">Include parking mode Recording</span>
                     <label className="relative inline-flex items-center cursor-pointer">
                         <input
                             type="checkbox"
