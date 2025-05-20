@@ -18,9 +18,9 @@ type Pricing = {
 
 export const prices: Pricing = {
     front: {
-        service: 90,
-        dashcam: 80,
-        full: 170
+        service: 120,
+        dashcam: 70,
+        full: 190
     },
     frontRear: {
         service: 190,
