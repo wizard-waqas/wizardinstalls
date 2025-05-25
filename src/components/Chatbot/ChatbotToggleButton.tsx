@@ -1,12 +1,14 @@
 import {FiMessageSquare} from "react-icons/fi";
 import {analytics} from "@/firebase";
 import {logEvent} from "@firebase/analytics";
+import {IoClose} from "react-icons/io5";
 
 interface ChatbotToggleButtonProps {
+    isChatOpen: boolean;
     onClick: () => void;
 }
 
-export default function ChatbotToggleButton({onClick}: ChatbotToggleButtonProps) {
+export default function ChatbotToggleButton({isChatOpen, onClick}: ChatbotToggleButtonProps) {
 
     const handleClick = () => {
         onClick()
@@ -21,7 +23,10 @@ export default function ChatbotToggleButton({onClick}: ChatbotToggleButtonProps)
             className="flex items-center justify-center fixed bottom-6 right-6 bg-blue-600 w-14 h-14 rounded-full shadow-lg z-50"
             aria-label="Chat with us"
         >
-            <FiMessageSquare className="text-white text-2xl"/>
+            {isChatOpen
+                ? <IoClose className="text-white text-2xl "/>
+                : <FiMessageSquare className="text-white text-2xl "/>
+            }
         </button>
     );
 }

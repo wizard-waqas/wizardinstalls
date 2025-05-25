@@ -10,7 +10,7 @@ export default function FAQSection() {
             <h3 className={"text-center mt-2"}>Frequently Asked Questions</h3>
             <div className="flex flex-col items-center mt-4">
                 <div className="w-11/12 lg:w-1/3">
-                    <FAQItem question="Are dashcams illegal?"
+                    <FAQItem question="Are dashcams legal?"
                              answer="Dashcams are legal in all 50 U.S. states. Our installation ensures it will not obstruct your view."/>
                     <FAQItem question="Can I install a dashcam myself?"
                              answer="You can do anything! But with our service you can save yourself time and forget the risk of damaging your vehicle."/>

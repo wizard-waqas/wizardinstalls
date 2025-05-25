@@ -13,13 +13,22 @@ import ChatPane from "@/components/Chatbot/ChatPane";
 import ChatbotToggleButton from "@/components/Chatbot/ChatbotToggleButton";
 
 export default function Home() {
-    const [open, setOpen] = useState(false);
+    const [isChatOpen, setIsChatOpen] = useState(false);
+    const userId = Math.random().toString(36).substring(2, 10);
 
     useEffect(() => {
         if (analytics) {
             logEvent(analytics, "page_view", {
                 page_path: window.location.pathname,
+                userId: userId,
             });
+        }
+
+    }, []);
+
+    useEffect(() => {
+        if (!localStorage.getItem("wizardUserId")) {
+            localStorage.setItem("wizardUserId", userId);
         }
     }, []);
 
@@ -32,8 +41,8 @@ export default function Home() {
             <SeeMoreSection/>
 
             <CallButton/>
-            {open && <ChatPane onClose={() => setOpen(false)} />}
-            <ChatbotToggleButton onClick={() => setOpen(!open)} />
+            {isChatOpen && <ChatPane onClose={() => setIsChatOpen(false)}/>}
+            <ChatbotToggleButton isChatOpen={isChatOpen} onClick={() => setIsChatOpen(!isChatOpen)}/>
         </div>
     );
 }
