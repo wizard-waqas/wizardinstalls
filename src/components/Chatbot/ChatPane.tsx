@@ -14,6 +14,7 @@ interface ChatPaneProps {
 
 export default function ChatPane({onClose}: ChatPaneProps) {
     const chatBottomRef = useRef(null);
+    const [isTyping, setIsTyping] = useState(false);
     const [messages, setMessages] = useState(() => {
         const stored = localStorage.getItem("wizardbot-messages");
         console.log("Stored messages:", stored);
@@ -29,6 +30,7 @@ export default function ChatPane({onClose}: ChatPaneProps) {
     useEffect(() => {
         const saveMessages = async () => {
             localStorage.setItem("wizardbot-messages", JSON.stringify(messages));
+            setIsTyping(true);
 
             try {
                 let userId = localStorage.getItem("wizardUserId");
@@ -55,6 +57,8 @@ export default function ChatPane({onClose}: ChatPaneProps) {
             } catch (error) {
                 toast.error('Failed to submit your details. Please try again later.');
                 console.error('Error submitting form:', error);
+            } finally {
+                setIsTyping(false);
             }
         };
 
@@ -72,12 +76,17 @@ export default function ChatPane({onClose}: ChatPaneProps) {
         const userMessage = {role: "user", content: input};
         setMessages([...messages, userMessage]);
         setInput("");
-
+        setIsTyping(true);
+        if (chatBottomRef.current) {
+            // @ts-ignore
+            chatBottomRef.current.scrollIntoView({behavior: "smooth"});
+        }
         const res = await fetch("/api/openai/chat", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({messages: [...messages, userMessage]}),
         });
+        setIsTyping(false);
         if (!res.ok) {
             console.error("Error:", res.statusText);
             setMessages((prev: any) => [...prev, {role: "assistant", content: "Something went wrong."}]);
@@ -129,7 +138,13 @@ export default function ChatPane({onClose}: ChatPaneProps) {
                         >
                             {renderMessage(msg.content)}
                         </div>
-                    ))}
+                    ))
+                }
+                {isTyping && (
+                    <div className="p-2 rounded bg-gray-800 text-white self-start text-sm">
+                        WizardBot is typing…
+                    </div>
+                )}
                 <div ref={chatBottomRef}/>
             </div>
             <div className=" p-2 flex items-center bg-gray-800">
