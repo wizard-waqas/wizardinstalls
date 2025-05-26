@@ -7,20 +7,18 @@ export const capitalize = (str: string) => {
 }
 
 type ServiceType = {
-    service: number;
+    service: any;
     dashcam: number;
     full: number;
 };
 
-type Pricing = {
-    front: ServiceType;
-    frontRear: ServiceType;
-    frontInterior: ServiceType;
-    rearviewMirror: ServiceType;
-    hardwiring: ServiceType;
+type PricingKeys = "front" | "frontRear" | "frontInterior" | "rearviewMirror" | "hardwiring";
+
+export type Pricing = {
+    [Key in PricingKeys]: ServiceType;
 };
 
-export const prices: Pricing = {
+export const prices: any = {
     front: {
         service: 120,
         dashcam: 100,

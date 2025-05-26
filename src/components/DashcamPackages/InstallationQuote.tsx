@@ -9,7 +9,6 @@ import {IoClose} from "react-icons/io5";
 import ZipCodeButtonInput from "@/components/DashcamPackages/ZipCodeButtonInput";
 import GetYourQuoteFinalizedButton from "@/components/DashcamPackages/GetYourQuoteFinalizedButton";
 
-
 export default function InstallationQuote() {
     const [selectedService, setSelectedService] = useAtom(selectedServiceAtom);
     const [includeDashcam, setIncludeDashcam] = useState(true);
@@ -21,7 +20,7 @@ export default function InstallationQuote() {
         if (!includeTravelCharge) {
             basePrice += 20;
         }
-        return includeHardwire ? basePrice + 120 : basePrice;
+        return includeHardwire ? basePrice + prices.hardwiring.service : basePrice;
     };
 
     const handleServiceChange = (service: string) => {
