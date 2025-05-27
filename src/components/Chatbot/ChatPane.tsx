@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import toast from "react-hot-toast";
 import {collection, doc, getDoc, setDoc} from "@firebase/firestore";
 import {db} from "@/firebase";
-import {wizardBotSystemMessage} from "@/utils";
+import {sendSMS, wizardBotSystemMessage} from "@/utils";
 import {marked} from "marked";
 import DOMPurify from "dompurify";
 import parse from "html-react-parser";
@@ -88,6 +88,8 @@ export default function ChatPane({onClose}: ChatPaneProps) {
         if (!res.ok) {
             console.error("Error:", res.statusText);
             setMessages((prev: any) => [...prev, {role: "assistant", content: "Something went wrong."}]);
+            const message = `Chatbot failed to respond.\n\nError: ${res.statusText}\nUser input: ${userInput}`;
+            await sendSMS(message)
             return;
         }
 

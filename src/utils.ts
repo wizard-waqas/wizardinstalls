@@ -6,6 +6,24 @@ export const capitalize = (str: string) => {
         .join(" ");
 }
 
+export const sendSMS = async (message: string) => {
+    const res = await fetch('/api/clicksend/send-new-client', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            to: '+17326684229',
+            message: message,
+        }),
+    });
+
+    const data = await res.json();
+    if (data.success) {
+        console.log('SMS sent!');
+    } else {
+        console.error('SMS failed:', data.error);
+    }
+}
+
 type ServiceType = {
     service: any;
     dashcam: number;

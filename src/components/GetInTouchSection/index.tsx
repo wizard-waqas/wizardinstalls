@@ -7,10 +7,12 @@ import {db} from "@/firebase";
 import toast from "react-hot-toast";
 import SubmitButton from "@/components/GetInTouchSection/SubmitButton";
 import MoreDetailsDropdown from "@/components/GetInTouchSection/MoreDetailsDropdown";
+import {sendSMS} from "@/utils";
 
 interface GetInTouchSectionProps {
     isCarplay?: boolean;
 }
+
 const GetInTouchSection = ({isCarplay}: GetInTouchSectionProps) => {
     const [formData, setFormData] = useState({
         fullName: '',
@@ -48,6 +50,9 @@ const GetInTouchSection = ({isCarplay}: GetInTouchSectionProps) => {
                 contactedClient: false,
             });
 
+            const message = `New client interested in ${isCarplay ? "backup camera" : "dashcam"} https://wizardinstalls.com/clients}`
+            await sendSMS(message);
+
             toast.success('Your details have been submitted successfully!', {id: toastId});
             return true
         } catch (error) {
@@ -56,7 +61,6 @@ const GetInTouchSection = ({isCarplay}: GetInTouchSectionProps) => {
             return false
         }
     };
-
 
     return (
         <section className="flex flex-col items-center bg-black text-white mt-8 text-center" id="information-form">
