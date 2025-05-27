@@ -9,7 +9,7 @@ interface SmsRequestBody {
 export async function POST(req: NextRequest) {
   try {
     const { to, message }: SmsRequestBody = await req.json();
-    console.log(`Sending SMS to ${to} with message: ${message}`);
+    console.log(`Sending SMS: ${message}`);
 
     if (!to || !message) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
@@ -48,6 +48,8 @@ export async function POST(req: NextRequest) {
         },
       }
     );
+
+    console.log(`SMS sent successfully to ${to}:`, response.data);
 
     return new Response(JSON.stringify({ success: true, data: response.data }), {
       status: 200,

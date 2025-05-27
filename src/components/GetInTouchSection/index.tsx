@@ -50,7 +50,7 @@ const GetInTouchSection = ({isCarplay}: GetInTouchSectionProps) => {
                 contactedClient: false,
             });
 
-            const message = `New client interested in ${isCarplay ? "backup camera" : "dashcam"} https://wizardinstalls.com/clients}`
+            const message = `New client interested in ${isCarplay ? "backup camera" : "dashcam"} https://wizardinstalls.com/clients`
             await sendSMS(message);
 
             toast.success('Your details have been submitted successfully!', {id: toastId});

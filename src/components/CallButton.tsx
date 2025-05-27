@@ -8,7 +8,7 @@ const CallButton = () => {
 
     const handleClick = () => {
         if (analytics) {
-            logEvent(analytics, "CallButtonClick");
+            logEvent(analytics, "CallNowButtonClick");
         }
     };
 

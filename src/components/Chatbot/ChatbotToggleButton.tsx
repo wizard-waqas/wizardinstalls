@@ -13,7 +13,7 @@ export default function ChatbotToggleButton({isChatOpen, onClick}: ChatbotToggle
     const handleClick = () => {
         onClick()
         if (analytics) {
-            logEvent(analytics, "CallButtonClick");
+            logEvent(analytics, "ChatBotButtonClick");
         }
     };
 
