@@ -1,12 +1,14 @@
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import toast from "react-hot-toast";
 import {collection, doc, getDoc, setDoc} from "@firebase/firestore";
 import {db} from "@/firebase";
 import {wizardBotSystemMessage} from "@/utils";
-import {RiResetRightLine} from "react-icons/ri";
 import {marked} from "marked";
 import DOMPurify from "dompurify";
 import parse from "html-react-parser";
+import MessagesContainer from "@/components/Chatbot/MessagesContainer";
+import InputsContainer from "@/components/Chatbot/InputsContainer";
+import ChatHeader from "@/components/Chatbot/ChatHeader";
 
 interface ChatPaneProps {
     onClose: () => void;
@@ -17,10 +19,8 @@ export default function ChatPane({onClose}: ChatPaneProps) {
     const [isTyping, setIsTyping] = useState(false);
     const [messages, setMessages] = useState(() => {
         const stored = localStorage.getItem("wizardbot-messages");
-        console.log("Stored messages:", stored);
         return stored ? JSON.parse(stored) : wizardBotSystemMessage;
     });
-    const [input, setInput] = useState("");
 
     useEffect(() => {
         const stored = localStorage.getItem("wizardbot-messages");
@@ -70,12 +70,11 @@ export default function ChatPane({onClose}: ChatPaneProps) {
         }
     }, [messages]);
 
-    const sendMessage = async () => {
-        if (!input.trim()) return;
+    const sendMessage = async (userInput: string) => {
+        if (!userInput.trim()) return;
 
-        const userMessage = {role: "user", content: input};
+        const userMessage = {role: "user", content: userInput};
         setMessages([...messages, userMessage]);
-        setInput("");
         setIsTyping(true);
         if (chatBottomRef.current) {
             // @ts-ignore
@@ -86,7 +85,6 @@ export default function ChatPane({onClose}: ChatPaneProps) {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({messages: [...messages, userMessage]}),
         });
-        setIsTyping(false);
         if (!res.ok) {
             console.error("Error:", res.statusText);
             setMessages((prev: any) => [...prev, {role: "assistant", content: "Something went wrong."}]);
@@ -96,12 +94,8 @@ export default function ChatPane({onClose}: ChatPaneProps) {
         const data = await res.json();
         const botReply = data.reply || "Something went wrong.";
         setMessages((prev: any) => [...prev, {role: "assistant", content: botReply}]);
+        setIsTyping(false);
     };
-
-    const handleReset = () => {
-        setMessages(wizardBotSystemMessage);
-        localStorage.setItem("wizardbot-messages", JSON.stringify(wizardBotSystemMessage));
-    }
 
     const renderMessage = (content: string) => {
         if (!content) return null;
@@ -111,58 +105,12 @@ export default function ChatPane({onClose}: ChatPaneProps) {
         return parse(clean);
     };
 
-
     return (
         <div
             className="fixed bottom-24 right-4 w-11/12 max-w-sm bg-gray-900 text-white shadow-lg rounded-lg flex flex-col overflow-hidden z-50">
-            <div className="flex items-center justify-between bg-gray-800 px-4 py-3">
-                <h2 className="text-lg font-semibold">WizardBot</h2>
-                <button
-                    onClick={handleReset}
-                    className="text-gray-400 hover:text-gray-200"
-                >
-                    <RiResetRightLine className={"text-xl"}/>
-                </button>
-            </div>
-            <div className="flex flex-col p-3 overflow-y-auto space-y-2 max-h-96 text-sm">
-                {messages
-                    .filter((msg: any) => msg.role !== "system")
-                    .map((msg: any, idx: number) => (
-                        <div
-                            key={idx}
-                            className={`prose prose-sm prose-invert p-2 rounded min-w-[80%] max-w-[80%] ${
-                                msg.role === "user"
-                                    ? "bg-blue-600 text-white self-end"
-                                    : "bg-gray-700 text-white self-start"
-                            }`}
-                        >
-                            {renderMessage(msg.content)}
-                        </div>
-                    ))
-                }
-                {isTyping && (
-                    <div className="p-2 rounded bg-gray-800 text-white self-start text-sm">
-                        WizardBot is typing…
-                    </div>
-                )}
-                <div ref={chatBottomRef}/>
-            </div>
-            <div className=" p-2 flex items-center bg-gray-800">
-                <input
-                    className="flex-1 text-sm px-3 py-1 bg-gray-700 text-white border border-gray-600 rounded mr-2 placeholder-gray-400"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-                    placeholder="Type your message..."
-                />
-                <button
-                    onClick={sendMessage}
-                    className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
-                >
-                    Send
-                </button>
-            </div>
+            <ChatHeader setMessages={setMessages}/>
+            <MessagesContainer messages={messages} renderMessage={renderMessage} isTyping={isTyping} chatBottomRef={chatBottomRef}/>
+            <InputsContainer sendMessage={sendMessage}/>
         </div>
-
     );
 }
