@@ -4,7 +4,7 @@ import {analytics} from "@/firebase";
 import {logEvent} from "@firebase/analytics";
 
 const CallButton = () => {
-    const phoneNumber = '+3474335693';
+    const phoneNumber = '+13474335693';
 
     const handleClick = () => {
         if (analytics) {
